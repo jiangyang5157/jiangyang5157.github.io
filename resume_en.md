@@ -2,27 +2,27 @@
 ## Software Engineer
 @tagline **12+ years** of mobile engineering — Android, SDKs, CI/CD. Hands-on with **AI agents**.
 @keywords_label Keywords
-@keywords_bridge Mobile platform engineering is where I'm deepest; AI agent systems are where I'm headed.
+@keywords_bridge Mobile platform engineering is where I'm deepest; AI are where I'm headed.
 @contact jiangyang5157@gmail.com
 @footer Yang Jiang · Auckland, New Zealand
 
 ---
 
 ## Keywords
-### AI & Agent Systems
-- Multi-Agent Orchestration
-- Adversarial Debate Protocols
-- LLM Prompt Engineering
-- Autonomous Decision Pipelines
-- Evolutionary Strategy Optimization
-
 ### Mobile & Cross-Platform
 - Android (Kotlin / Java)
 - Flutter (Dart)
 - Clean Architecture
 - Modular SDK Design
 
-### Backend & Systems
+### AI
+- Multi-Agent Orchestration
+- Adversarial Debate Protocols
+- LLM Prompt Engineering
+- Autonomous Decision Pipelines
+- Evolutionary Strategy Optimization
+
+### Backend
 - Go
 - Python
 - C / C++

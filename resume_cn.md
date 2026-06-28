@@ -2,27 +2,27 @@
 ## 软件工程师
 @tagline **12 年以上**移动端工程经验 — Android、SDK、CI/CD。**AI 智能体**方面亦有实践经验。
 @keywords_label 关键词
-@keywords_bridge 移动端平台工程是我深耕的领域，AI 智能体系统是我前行的方向。
+@keywords_bridge 移动端平台工程是我深耕的领域，AI 是我前行的方向。
 @contact jiangyang5157@gmail.com
 @footer 江洋 · 新西兰，奥克兰
 
 ---
 
 ## 关键词
-### AI 与智能体系统
-- Multi-Agent Orchestration
-- Adversarial Debate Protocols
-- LLM Prompt Engineering
-- Autonomous Decision Pipelines
-- Evolutionary Strategy Optimization
-
 ### 移动端与跨平台
 - Android (Kotlin / Java)
 - Flutter (Dart)
 - Clean Architecture
 - Modular SDK Design
 
-### 后端与系统
+### AI
+- Multi-Agent Orchestration
+- Adversarial Debate Protocols
+- LLM Prompt Engineering
+- Autonomous Decision Pipelines
+- Evolutionary Strategy Optimization
+
+### 后端
 - Go
 - Python
 - C / C++

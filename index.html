@@ -91,7 +91,7 @@
   .hero .sub { font-size: 1.05rem; color: var(--text-2); margin-top: 0.6rem; font-weight: 400; }
   .hero .tag { font-size: 0.95rem; color: var(--text-3); margin-top: 1rem; max-width: 420px; line-height: 1.6; }
   .hero .tag strong { color: var(--green); font-weight: 600; }
-  .hero .act-row { display: flex; justify-content: flex-end; margin-top: 2rem; }
+  .hero .act-row { position: absolute; top: 0.6rem; right: 0; }
 
   /* Sections */
   section { padding: 3.5rem 0; }
@@ -153,24 +153,27 @@
   @media (max-width: 560px) {
     main { padding-left: 0; padding-top: 1rem; }
     main::before { top: 0.45rem; left: 0; right: 0; bottom: auto; width: 100%; height: var(--rule-w); }
-    main::after { top: 0.35rem; left: -0.05rem; }
+    main::after { top: 0.26rem; left: -0.18rem; }
+    .hero .act-row { top: 0.25rem; }
     .hero { padding-top: 2.5rem; }
     section { padding: 2.5rem 0; }
     .rs-item-head { flex-direction: column; }
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    main::before {
+    main:not(.loaded)::before {
       transform-origin: top;
       animation: drawRule 0.4s ease-out both;
     }
-    main::after {
+    main:not(.loaded)::after {
       animation: revealDot 0.25s 0.35s ease-out both;
     }
-    .hero {
+    main:not(.loaded) .hero {
       animation: fadeUp 0.4s 0.15s ease-out both;
     }
-    section, .contact, footer {
+    main:not(.loaded) section,
+    main:not(.loaded) .contact,
+    main:not(.loaded) footer {
       animation: fadeUp 0.4s 0.3s ease-out both;
     }
   }
@@ -395,7 +398,11 @@ async function load(lang) {
   document.getElementById('btn-cn').classList.toggle('active', lang === 'cn');
 }
 
-document.addEventListener('DOMContentLoaded', () => load('en'));
+document.addEventListener('DOMContentLoaded', () => {
+  load('en').then(() => {
+    setTimeout(() => document.querySelector('main').classList.add('loaded'), 600);
+  });
+});
 window.switchLang = lang => {
   load(lang);
   window.scrollTo({ top: 0, behavior: 'smooth' });

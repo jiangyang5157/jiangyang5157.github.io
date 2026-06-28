@@ -26,7 +26,7 @@ keywords:
       tags: [REST API, Go, Python, C/C++]
 
     - name: {en: Engineering Practices, cn: 工程实践}
-      tags: [Agile Scrum, CI/CD, TDD]
+      tags: [Agile Scrum, CI/CD, Azure DevOps]
 
 # ── Resume ──
 resume:
@@ -45,15 +45,15 @@ resume:
           role: {en: Software Specialist, cn: 软件专家}
           bullets:
             en:
-              - "Partner with PMs and UX early-cycle to refine requirements, de-risk features, and keep the squad focused on the right outcomes each sprint."
-              - "Raise engineering quality through rigorous code review, mentoring, and investing in tester tooling – streamlining dev-to-QA handoff and reducing release friction."
-              - "Lead cross-squad mobile chapter initiatives: coding standards, best practices, and knowledge sharing across teams."
-              - "Coordinate mobile releases and drive CI/CD pipeline improvements, including the migration from Azure DevOps to GitHub Enterprise."
+              - "Engineer ASB Mobile Banking across Android and iOS, ensuring high-concurrency resilience and compliance with stringent financial security protocols."
+              - "Drive early-cycle requirements analysis and feasibility audits to eliminate technical risks and steer the squad toward predictable, high-value sprint outcomes."
+              - "Maintain cross-squad mobile community standards and culture, leveraging frequent technical synthesis and toolchain innovations to accelerate developer experience and elevate delivery quality."
+              - "Orchestrate CI/CD pipeline enhancement, advance mobile release cycle, and contribute to the system-level migration from Azure DevOps to GitHub Enterprise."
             cn:
-              - "在迭代周期早期与 PM 和 UX 合作细化需求，在开发前消除功能风险，确保团队聚焦正确的迭代目标。"
-              - "通过严格的代码审查、技术指导和优化测试工具链提升工程质量 – 简化开发到 QA 的交付流程，降低发布摩擦。"
-              - "主导跨团队移动端分会倡议：编码规范、最佳实践及团队间知识共享。"
-              - "推进移动端发布协调与 CI/CD 流水线改进，包括从 Azure DevOps 到 GitHub Enterprise 的持续迁移。"
+              - "开发和维护 ASB 移动银行（Android / iOS），确保高并发弹性吞吐与金融级安全协议的严苛落地。"
+              - "主导迭代前置的需求分析与可行性审计，破除技术隐患，驱动团队聚焦高价值迭代目标。"
+              - "维护跨团队移动端社区的标准和文化，通过高频技术探讨与工具链革新加速团队的研发体验，提升交付质量。"
+              - "协调 CI/CD 流水线演进并推进移动端发布流，参与从 Azure DevOps 至 GitHub Enterprise 的系统级迁移。"
 
         - name: {en: Fiserv, cn: Fiserv}
           location: {en: Auckland, cn: 奥克兰}

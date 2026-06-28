@@ -1,6 +1,6 @@
 # 江洋
 ## 软件工程师
-@tagline **12 年以上**移动端工程经验 — Android、SDK、CI/CD。**AI 智能体**方面亦有实践经验。
+@tagline **12 年以上**移动端工程经验 — **Android**、SDK、CI/CD。**AI 智能体**方面亦有实践经验。
 @keywords_label 关键词
 @keywords_bridge 移动端平台工程是我深耕的领域，AI 是我前行的方向。
 @contact jiangyang5157@gmail.com
@@ -75,12 +75,12 @@
 - 设计多供应商 AI 集成层 (AbstractAIClient)，支持 Gemini、DeepSeek 及 Claude —— 无需修改智能体逻辑即可热切换 LLM 后端。
 - 构建 Guardian 安全层，通过硬约束与熔断机制实现：每个决策在执行前必须通过验证；连续失败触发自动停止并告警。
 - Python、FastAPI、YAML 驱动配置，涵盖单元、集成与系统层的完整测试套件。
-@link [GitHub →](https://github.com/jiangyang5157/crypto)
+@link [GitHub](https://github.com/jiangyang5157/crypto)
 
 #### 数独谜题引擎
 @meta 2014 年 8 月 – 2014 年 10 月
 - 构建 Android 数独应用，基于 Go 实现的 Knuth's Algorithm X 求解器，毫秒级生成唯一解谜题。
-@link [Android →](https://github.com/jiangyang5157/sudoku-android) [Go 引擎 →](https://github.com/jiangyang5157/go-sudoku)
+@link [Android](https://github.com/jiangyang5157/sudoku-android) [Go 引擎](https://github.com/jiangyang5157/go-sudoku)
 
 ### 教育背景
 

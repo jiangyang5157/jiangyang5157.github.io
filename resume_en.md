@@ -1,6 +1,6 @@
 # Yang Jiang
 ## Software Engineer
-@tagline **12+ years** of mobile engineering — Android, SDKs, CI/CD. Hands-on with **AI agents**.
+@tagline **12+ years** of mobile engineering — **Android**, SDKs, CI/CD. Hands-on with **AI agents**.
 @keywords_label Keywords
 @keywords_bridge Mobile platform engineering is where I'm deepest; AI are where I'm headed.
 @contact jiangyang5157@gmail.com
@@ -75,12 +75,12 @@ Bridges mobile-platform engineering with LLM agent architecture — multi-agent 
 - Designed a provider-agnostic AI integration layer (AbstractAIClient) supporting Gemini, DeepSeek, and Claude — hot-swappable LLM backends without changing agent logic.
 - Engineered a Guardian safety layer with hard constraints and circuit breakers: every decision validated before execution; consecutive failures trigger automatic halt and alert.
 - Python, FastAPI, YAML-driven configuration, comprehensive test suite across unit, integration, and system layers.
-@link [GitHub →](https://github.com/jiangyang5157/crypto)
+@link [GitHub](https://github.com/jiangyang5157/crypto)
 
 #### Sudoku Puzzle Engine
 @meta Aug 2014 – Oct 2014
 - Built an Android Sudoku app generating unique puzzles in milliseconds, powered by a Go-based Knuth's Algorithm X solver.
-@link [Android →](https://github.com/jiangyang5157/sudoku-android) [Go Engine →](https://github.com/jiangyang5157/go-sudoku)
+@link [Android](https://github.com/jiangyang5157/sudoku-android) [Go Engine](https://github.com/jiangyang5157/go-sudoku)
 
 ### Education
 

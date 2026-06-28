@@ -86,8 +86,9 @@
     font-family: 'Space Mono', monospace;
     font-size: clamp(2.5rem,6vw,4.5rem); font-weight: 700;
     line-height: 1.08; letter-spacing: -0.02em; color: var(--text);
+    display: flex; justify-content: space-between; align-items: baseline;
   }
-  .hero .sub { display: flex; align-items: baseline; gap: 1rem; font-size: 1.05rem; color: var(--text-2); margin-top: 0.6rem; font-weight: 400; }
+  .hero .sub { font-size: 1.05rem; color: var(--text-2); margin-top: 0.6rem; font-weight: 400; }
   .hero .tag { font-size: 0.95rem; color: var(--text-3); margin-top: 1rem; max-width: 420px; line-height: 1.6; }
   .hero .tag strong { color: var(--green); font-weight: 600; }
 
@@ -229,11 +230,11 @@ const render = (d) => {
 
   // Hero
   h += `<header class="hero">
-  <h1>${d.name.replace(/\n/g, '<br>')}</h1>
-  <p class="sub"><span class="lang-pill">
+  <h1><span>${d.name.replace(/\n/g, '<br>')}</span> <span class="lang-pill">
   <button class="active" id="btn-en" onclick="switchLang('en')">EN</button>
   <button id="btn-cn" onclick="switchLang('cn')">中文</button>
-  </span> <span>${d.title}</span></p>
+  </span></h1>
+  <p class="sub">${d.title}</p>
   <p class="tag">${formatText(d.summary)}</p>
   </header>`;
 

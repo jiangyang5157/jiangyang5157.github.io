@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yang Jiang — Software Engineer</title>
-<meta name="description" content="Yang Jiang — Software Engineer. Financial platforms → AI agents. Auckland, New Zealand.">
+<meta name="description" content="Yang Jiang — Software Engineer. Financial platforms, AI agents. Auckland, New Zealand.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -13,7 +13,6 @@
 
   :root {
     --green:       #2d6b54;
-    --green-light: #eaf2ee;
     --bg:          #faf8f6;
     --surface:     #f2f0ed;
     --text:        #1a1a1a;
@@ -43,7 +42,6 @@
     position: relative;
   }
 
-  /* ── The Green Rule ── */
   main::before {
     content: '';
     position: absolute;
@@ -53,10 +51,25 @@
     border-radius: 2px;
   }
 
-  /* ── Shared type ── */
-  .mono {
-    font-family: 'Space Mono', 'SF Mono', 'Cascadia Code', ui-monospace, monospace;
+  .mono { font-family: 'Space Mono', 'SF Mono', 'Cascadia Code', ui-monospace, monospace; }
+
+  /* ── Lang toggle ── */
+  .lang-switch {
+    position: fixed; top: 1rem; right: 1.5rem; z-index: 100;
+    display: inline-flex; gap: 0;
+    background: var(--surface); border-radius: 100px;
+    padding: 3px; font-size: 0.76rem; font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   }
+  .lang-switch button {
+    border: none; background: transparent;
+    padding: 0.3rem 0.8rem; border-radius: 100px;
+    cursor: pointer; font-family: inherit; font-size: inherit; font-weight: 500;
+    color: var(--text-3); transition: all 0.2s ease;
+  }
+  .lang-switch button.active { background: var(--green); color: #fff; }
+  .lang-switch button:hover:not(.active) { color: var(--text); }
 
   /* ── Section label ── */
   .sec-label {
@@ -67,59 +80,22 @@
   }
 
   /* ── Hero ── */
-  .hero {
-    padding-top: clamp(4rem, 12vh, 7rem);
-    padding-bottom: 2rem;
-  }
+  .hero { padding-top: clamp(4rem, 12vh, 7rem); padding-bottom: 2rem; }
   .hero h1 {
     font-family: 'Space Mono', monospace;
     font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 700;
-    line-height: 1.08;
-    letter-spacing: -0.02em;
+    font-weight: 700; line-height: 1.08; letter-spacing: -0.02em;
     color: var(--text);
   }
-  .hero .sub {
-    font-size: 1.05rem; color: var(--text-2);
-    margin-top: 0.6rem; font-weight: 400;
+  .hero .sub { font-size: 1.05rem; color: var(--text-2); margin-top: 0.6rem; font-weight: 400; }
+  .hero .tag { font-size: 0.9rem; color: var(--text-3); margin-top: 1rem; max-width: 420px; line-height: 1.6; }
+  .hero .cta {
+    display: inline-block; margin-top: 2rem;
+    padding: 0.55rem 1.5rem; font-size: 0.88rem; font-weight: 500;
+    color: var(--green); border: 1.5px solid var(--green); border-radius: 100px;
+    text-decoration: none; transition: all 0.2s ease;
   }
-  .hero .tag {
-    font-size: 0.9rem; color: var(--text-3);
-    margin-top: 1rem; max-width: 420px;
-    line-height: 1.6;
-  }
-  .hero .act-row {
-    display: flex; align-items: center; gap: 1rem;
-    margin-top: 2rem; flex-wrap: wrap;
-  }
-
-  /* ── Lang pill ── */
-  .lang-pill {
-    display: inline-flex; gap: 2px;
-    background: var(--surface); border-radius: 100px;
-    padding: 3px; font-size: 0.78rem; font-weight: 500;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  }
-  .lang-pill button {
-    border: none; background: transparent;
-    padding: 0.3rem 0.85rem; border-radius: 100px;
-    cursor: pointer; font-family: inherit; font-size: inherit; font-weight: 500;
-    color: var(--text-3); transition: all 0.2s ease;
-  }
-  .lang-pill button.active { background: var(--green); color: #fff; }
-  .lang-pill button:hover:not(.active) { color: var(--text); }
-
-  /* ── CTA button ── */
-  .cta {
-    display: inline-block;
-    padding: 0.55rem 1.5rem;
-    font-size: 0.88rem; font-weight: 500;
-    color: var(--green);
-    border: 1.5px solid var(--green); border-radius: 100px;
-    text-decoration: none;
-    transition: all 0.2s ease;
-  }
-  .cta:hover { background: var(--green); color: #fff; }
+  .hero .cta:hover { background: var(--green); color: #fff; }
 
   /* ── Sections ── */
   section { padding: 3.5rem 0; }
@@ -133,11 +109,7 @@
     background: var(--surface); padding: 0.25rem 0.7rem; border-radius: 5px;
   }
 
-  /* ── Resume section ── */
-  .rs-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; }
-  .rs-header .sec-label { margin-bottom: 0; }
-  .rs-content.hidden { display: none; }
-
+  /* ── Resume ── */
   .rs-block { margin-bottom: 2.5rem; }
   .rs-block:last-child { margin-bottom: 0; }
   .rs-block > h3 {
@@ -147,7 +119,6 @@
     margin-bottom: 1.25rem;
   }
   .rs-block > p { font-size: 0.9rem; line-height: 1.65; color: var(--text); margin-bottom: 0.5rem; }
-
   .rs-item { margin-bottom: 1.5rem; }
   .rs-item:last-child { margin-bottom: 0; }
   .rs-item-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.15rem; }
@@ -157,34 +128,31 @@
   .rs-item ul { padding-left: 1.3rem; }
   .rs-item li { font-size: 0.87rem; line-height: 1.6; margin-bottom: 0.3rem; color: var(--text); }
   .rs-item li:last-child { margin-bottom: 0; }
-
   .rs-links { margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; }
   .rs-links a { font-size: 0.85rem; color: var(--green); text-decoration: none; font-weight: 500; }
   .rs-links a:hover { text-decoration: underline; }
 
   /* ── Contact ── */
-  .contact { padding: 2.5rem 0 1.5rem; text-align: left; }
+  .contact { padding: 2.5rem 0 1.5rem; }
   .contact a { color: var(--green); text-decoration: none; font-weight: 500; }
   .contact a:hover { text-decoration: underline; }
   .contact p { font-size: 0.9rem; color: var(--text-2); }
 
   footer { padding: 0 0 4rem; font-size: 0.78rem; color: var(--text-3); }
 
+  /* ── Lang visibility ── */
+  .lang-en, .lang-cn { transition: opacity 0.2s ease; }
+  body.lang-cn .lang-en { display: none; }
+  body.lang-en .lang-cn { display: none; }
+
   /* ── Mobile ── */
   @media (max-width: 560px) {
-    main {
-      padding-left: 0;
-      padding-top: var(--rule-w);
-    }
-    main::before {
-      top: 0; left: 0; right: 0; bottom: auto;
-      width: 100%; height: var(--rule-w);
-    }
+    main { padding-left: 0; padding-top: var(--rule-w); }
+    main::before { top: 0; left: 0; right: 0; bottom: auto; width: 100%; height: var(--rule-w); }
     .hero { padding-top: 2.5rem; }
     .skills-grid { grid-template-columns: 1fr; }
     section { padding: 2.5rem 0; }
     .rs-item-head { flex-direction: column; }
-    .rs-header { flex-direction: column; align-items: flex-start; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -193,32 +161,36 @@
   }
 </style>
 </head>
-<body>
+<body class="lang-en">
+
+  <!-- ── Language Switch ── -->
+  <nav class="lang-switch" aria-label="Language">
+    <button class="active" onclick="setLang('en')">EN</button>
+    <button onclick="setLang('cn')">中文</button>
+  </nav>
 
 <main>
 
   <!-- ═══════ HERO ═══════ -->
   <header class="hero">
-    <h1>Yang<br>Jiang</h1>
-    <p class="sub">Software Engineer</p>
+    <h1><span class="lang-en">Yang<br>Jiang</span><span class="lang-cn">江洋</span></h1>
+    <p class="sub"><span class="lang-en">Software Engineer</span><span class="lang-cn">软件工程师</span></p>
     <p class="tag">
-      <strong>12+ years</strong> building financial platforms that ship — payments, SDKs, CI/CD. Also experienced with <strong>AI agents</strong>: multi-agent debate protocols, safety guardrails, autonomous decision pipelines.
+      <span class="lang-en"><strong>12+ years</strong> building financial platforms that ship — payments, SDKs, CI/CD. Also experienced with <strong>AI agents</strong>: multi-agent debate protocols, safety guardrails, autonomous decision pipelines.</span>
+      <span class="lang-cn"><strong>12 年以上</strong>金融平台工程经验 — 支付、SDK、CI/CD。<strong>AI 智能体</strong>方面亦有实践经验：多智能体辩论协议、安全防护与熔断机制、自主决策流水线。</span>
     </p>
-    <div class="act-row">
-      <a href="#resume" class="cta">View Resume ↓</a>
-      <div class="lang-pill">
-        <button class="active" onclick="switchLang('en')">EN</button>
-        <button onclick="switchLang('cn')">中文</button>
-      </div>
-    </div>
+    <a href="#resume" class="cta"><span class="lang-en">View Resume ↓</span><span class="lang-cn">查看简历 ↓</span></a>
   </header>
 
   <!-- ═══════ SKILLS ═══════ -->
   <section>
-    <h2 class="sec-label">Key words</h2>
+    <h2 class="sec-label lang-en">Key words</h2>
+    <h2 class="sec-label lang-cn">关键词</h2>
     <div class="skills-grid">
+
       <div class="sk-group">
-        <h3>AI &amp; Agent Systems</h3>
+        <h3 class="lang-en">AI &amp; Agent Systems</h3>
+        <h3 class="lang-cn">AI 与智能体系统</h3>
         <div class="sk-tags">
           <span>Multi-Agent Orchestration</span><span>Adversarial Debate Protocols</span>
           <span>LLM Prompt Engineering</span><span>Autonomous Decision Pipelines</span>
@@ -226,40 +198,42 @@
           <span>Provider-Agnostic AI</span><span>Automated Risk Controls</span>
         </div>
       </div>
+
       <div class="sk-group">
-        <h3>Mobile &amp; Cross-Platform</h3>
+        <h3 class="lang-en">Mobile &amp; Cross-Platform</h3>
+        <h3 class="lang-cn">移动端与跨平台</h3>
         <div class="sk-tags">
           <span>Android (Kotlin / Java)</span><span>Flutter (Dart)</span>
           <span>Clean Architecture</span><span>Modular SDK Design</span>
         </div>
       </div>
+
       <div class="sk-group">
-        <h3>Backend &amp; Systems</h3>
+        <h3 class="lang-en">Backend &amp; Systems</h3>
+        <h3 class="lang-cn">后端与系统</h3>
         <div class="sk-tags">
           <span>Go</span><span>Python</span><span>C / C++</span><span>REST API Design</span>
         </div>
       </div>
+
       <div class="sk-group">
-        <h3>Engineering Practices</h3>
+        <h3 class="lang-en">Engineering Practices</h3>
+        <h3 class="lang-cn">工程实践</h3>
         <div class="sk-tags">
           <span>TDD</span><span>CI/CD</span><span>Agile / Scrum</span>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- ═══════ RESUME ═══════ -->
   <section id="resume">
-    <div class="rs-header">
-      <h2 class="sec-label">Resume</h2>
-      <div class="lang-pill">
-        <button class="active" onclick="switchLang('en')">EN</button>
-        <button onclick="switchLang('cn')">中文</button>
-      </div>
-    </div>
 
     <!-- ── EN ── -->
-    <div class="rs-content" id="rs-en">
+    <div class="lang-en">
+
+      <h2 class="sec-label">Resume</h2>
 
       <div class="rs-block">
         <p>Software Engineer with <strong>12+ years</strong> building <strong>high-integrity financial platforms</strong>, and hands-on experience with <strong>AI agents</strong>. Bridges mobile-platform engineering with LLM agent architecture — multi-agent debate protocols, adversarial validation, and autonomous decision pipelines. Proven track record of modular frameworks that accelerate delivery in regulated environments.</p>
@@ -267,7 +241,6 @@
 
       <div class="rs-block">
         <h3>Employment</h3>
-
         <div class="rs-item">
           <div class="rs-item-head"><strong>ASB Bank</strong><span class="date">Auckland · Aug 2021 – Present</span></div>
           <p class="rs-role">Software Specialist</p>
@@ -278,7 +251,6 @@
             <li>Own mobile release coordination and CI/CD pipeline improvements, including the migration from Azure DevOps (TFS) to GitHub Enterprise.</li>
           </ul>
         </div>
-
         <div class="rs-item">
           <div class="rs-item-head"><strong>Fiserv</strong><span class="date">Auckland · Oct 2014 – Aug 2021</span></div>
           <p class="rs-role">Senior Mobile Engineer</p>
@@ -288,13 +260,11 @@
             <li>Delivered complex subsystems end-to-end: biometric authentication, Remote Deposit Capture (Camera2), secure payments and transfers, location-aware services, cross-timezone scheduling, and deep-link routing — each with production-grade security requirements.</li>
           </ul>
         </div>
-
         <div class="rs-item">
           <div class="rs-item-head"><strong>Freelance</strong><span class="date">Guangzhou · Mar 2012 – Apr 2012</span></div>
           <p class="rs-role">Developer</p>
           <ul><li>Built an Android multimedia learning platform with video playback, subtitle sync, voice recording, and a vocabulary retention engine based on the Ebbinghaus forgetting curve.</li></ul>
         </div>
-
         <div class="rs-item">
           <div class="rs-item-head"><strong>Inventec Co. Ltd.</strong><span class="date">Shanghai · Nov 2009 – Dec 2011</span></div>
           <p class="rs-role">Android Developer</p>
@@ -304,7 +274,6 @@
 
       <div class="rs-block">
         <h3>Projects</h3>
-
         <div class="rs-item">
           <div class="rs-item-head"><strong>Multi-Agent Decision System</strong><span class="date">Apr 2026 – Jul 2026</span></div>
           <ul>
@@ -316,7 +285,6 @@
           </ul>
           <div class="rs-links"><a href="https://github.com/jiangyang5157/crypto">GitHub →</a></div>
         </div>
-
         <div class="rs-item">
           <div class="rs-item-head"><strong>Sudoku Puzzle Engine</strong><span class="date">Aug 2014 – Oct 2014</span></div>
           <ul><li>Built an Android Sudoku app generating unique puzzles in milliseconds, powered by a Go-based Knuth's Algorithm X solver.</li></ul>
@@ -344,11 +312,12 @@
           <ul><li>Undergraduate Excellence Award for an autonomous traffic control system. Programmed core logic in AT89S52, 8225A, and 74HC245 Assembly, designed and fabricated custom PCBs with peripheral logic ICs for real-time hardware-level control.</li></ul>
         </div>
       </div>
-
     </div>
 
     <!-- ── CN ── -->
-    <div class="rs-content hidden" id="rs-cn">
+    <div class="lang-cn">
+
+      <h2 class="sec-label">简历</h2>
 
       <div class="rs-block">
         <p>拥有 <strong>12 年以上</strong>构建<strong>高完整性金融平台</strong>经验的软件工程师，同时具备 <strong>AI 智能体</strong>方面的实践经验。兼具移动端/平台工程能力与 LLM 智能体架构实践经验 —— 多智能体辩论协议、对抗性验证及自主决策流水线。擅长构建模块化框架，在受监管环境中加速产品交付。</p>
@@ -356,7 +325,6 @@
 
       <div class="rs-block">
         <h3>工作经历</h3>
-
         <div class="rs-item">
           <div class="rs-item-head"><strong>ASB 银行</strong><span class="date">奥克兰 · 2021 年 8 月 – 至今</span></div>
           <p class="rs-role">软件专家</p>
@@ -367,7 +335,6 @@
             <li>负责移动端发布协调与 CI/CD 流水线改进，包括从 Azure DevOps (TFS) 到 GitHub Enterprise 的持续迁移。</li>
           </ul>
         </div>
-
         <div class="rs-item">
           <div class="rs-item-head"><strong>Fiserv</strong><span class="date">奥克兰 · 2014 年 10 月 – 2021 年 8 月</span></div>
           <p class="rs-role">资深移动端工程师</p>
@@ -377,13 +344,11 @@
             <li>端到端交付复杂子系统：生物识别认证、远程支票存款 (Camera2)、安全支付与转账、位置感知服务、跨时区调度及 deep-link 路由 —— 每个子系统均满足生产级安全要求。</li>
           </ul>
         </div>
-
         <div class="rs-item">
           <div class="rs-item-head"><strong>自由职业</strong><span class="date">广州 · 2012 年 3 月 – 2012 年 4 月</span></div>
           <p class="rs-role">开发者</p>
           <ul><li>构建集成视频播放、字幕同步、语音录制及基于艾宾浩斯遗忘曲线的词汇记忆引擎的 Android 多媒体学习平台。</li></ul>
         </div>
-
         <div class="rs-item">
           <div class="rs-item-head"><strong>英业达</strong><span class="date">上海 · 2009 年 11 月 – 2011 年 12 月</span></div>
           <p class="rs-role">Android 开发工程师</p>
@@ -393,7 +358,6 @@
 
       <div class="rs-block">
         <h3>项目</h3>
-
         <div class="rs-item">
           <div class="rs-item-head"><strong>多智能体决策系统</strong><span class="date">2026 年 4 月 – 2026 年 7 月</span></div>
           <ul>
@@ -405,7 +369,6 @@
           </ul>
           <div class="rs-links"><a href="https://github.com/jiangyang5157/crypto">GitHub →</a></div>
         </div>
-
         <div class="rs-item">
           <div class="rs-item-head"><strong>数独谜题引擎</strong><span class="date">2014 年 8 月 – 2014 年 10 月</span></div>
           <ul><li>构建 Android 数独应用，基于 Go 实现的 Knuth's Algorithm X 求解器，毫秒级生成唯一解谜题。</li></ul>
@@ -433,8 +396,8 @@
           <ul><li>毕业设计"基于单片机的交通灯控制系统"获优秀项目奖。使用 AT89S52、8225A 及 74HC245 汇编语言编写核心逻辑，自主设计并制作 PCB 电路板，实现硬件级实时控制。</li></ul>
         </div>
       </div>
-
     </div>
+
   </section>
 
   <!-- ═══════ CONTACT ═══════ -->
@@ -443,24 +406,18 @@
   </section>
 
   <footer>
-    <p>Yang Jiang &nbsp;·&nbsp; Auckland, New Zealand</p>
+    <p class="lang-en">Yang Jiang &nbsp;·&nbsp; Auckland, New Zealand</p>
+    <p class="lang-cn">江洋 &nbsp;·&nbsp; 新西兰，奥克兰</p>
   </footer>
 
 </main>
 
 <script>
-  function switchLang(lang) {
-    const en = document.getElementById('rs-en');
-    const cn = document.getElementById('rs-cn');
-    const showEn = lang === 'en';
-    en.classList.toggle('hidden', !showEn);
-    cn.classList.toggle('hidden', showEn);
-    document.querySelectorAll('.lang-pill').forEach(pill => {
-      pill.querySelectorAll('button').forEach(btn => {
-        const txt = btn.textContent.trim();
-        const active = (lang === 'en' && txt === 'EN') || (lang === 'cn' && txt === '中文');
-        btn.classList.toggle('active', active);
-      });
+  function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+    document.querySelectorAll('.lang-switch button').forEach(btn => {
+      const txt = btn.textContent.trim();
+      btn.classList.toggle('active', (lang === 'en' && txt === 'EN') || (lang === 'cn' && txt === '中文'));
     });
   }
 </script>

@@ -230,10 +230,10 @@ const render = (d) => {
   // Hero
   h += `<header class="hero">
   <h1>${d.name.replace(/\n/g, '<br>')}</h1>
-  <p class="sub"><span>${d.title}</span> <span class="lang-pill">
+  <p class="sub"><span class="lang-pill">
   <button class="active" id="btn-en" onclick="switchLang('en')">EN</button>
   <button id="btn-cn" onclick="switchLang('cn')">中文</button>
-  </span></p>
+  </span> <span>${d.title}</span></p>
   <p class="tag">${formatText(d.summary)}</p>
   </header>`;
 

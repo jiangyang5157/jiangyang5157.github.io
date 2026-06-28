@@ -144,9 +144,19 @@
 
   /* Footer */
   footer { padding: 2.5rem 0 4rem; }
-  .footer-email { margin-bottom: 0.35rem; }
-  .footer-email a { font-size: 0.95rem; color: var(--green); text-decoration: none; font-weight: 500; }
-  .footer-email a:hover { text-decoration: underline; }
+  .footer-contact { margin-bottom: 0.35rem; font-size: 0.95rem; }
+  .footer-contact a { color: var(--green); text-decoration: none; font-weight: 500; }
+  .footer-contact a:hover { text-decoration: underline; }
+  .footer-sep { color: var(--text-3); margin: 0 0.45rem; }
+  .footer-wechat { color: var(--text-2); }
+  .wechat-id {
+    cursor: pointer; color: var(--text);
+    border-bottom: 1px dashed var(--text-3);
+    transition: color 0.15s ease, border-color 0.15s ease;
+    user-select: all;
+  }
+  .wechat-id:hover { color: var(--green); border-bottom-color: var(--green); }
+  .wechat-id.copied { color: var(--green); border-bottom-color: transparent; cursor: default; }
   .footer-location { font-size: 0.78rem; color: var(--text-3); }
 
   /* Mobile */
@@ -287,8 +297,8 @@ const render = (d) => {
 
   // Footer
   h += '<footer>';
-  h += `<p class="footer-email"><a href="mailto:${d.email}">${d.email}</a></p>`;
-  h += `<p class="footer-location">${d.name} · ${d.current_location} · ${d.last_modified}</p>`;
+  h += `<p class="footer-contact"><a href="mailto:${d.email}">${d.email}</a><span class="footer-sep">·</span><span class="footer-wechat">WeChat: <span class="wechat-id" onclick="copyWechat(this)" title="Click to copy">${d.wechat}</span></span></p>`;
+  h += `<p class="footer-location">${d.current_location} · ${d.last_modified}</p>`;
   h += '</footer>';
 
   return h;
@@ -322,6 +332,17 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => { document.querySelector('main').classList.add('loaded'); }, 600);
   });
 });
+window.copyWechat = el => {
+  navigator.clipboard.writeText(el.textContent).then(() => {
+    el.classList.add('copied');
+    const orig = el.textContent;
+    el.textContent = 'Copied!';
+    setTimeout(() => {
+      el.textContent = orig;
+      el.classList.remove('copied');
+    }, 1500);
+  }).catch(() => {});
+};
 window.switchLang = lang => {
   load(lang);
   window.scrollTo({ top: 0, behavior: 'smooth' });

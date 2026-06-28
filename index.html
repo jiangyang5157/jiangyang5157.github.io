@@ -230,8 +230,8 @@ const render = (d) => {
   // Hero
   h += `<header class="hero">
   <h1><span>${d.name.replace(/\n/g, '<br>')}</span> <span class="lang-pill">
-  <button class="active" id="btn-en" onclick="switchLang('en')">EN</button>
-  <button id="btn-cn" onclick="switchLang('cn')">中文</button>
+  <button class="active" id="btn-cn" onclick="switchLang('cn')">中文</button>
+  <button id="btn-en" onclick="switchLang('en')">EN</button>
   </span></h1>
   <p class="tag">${d.title} | ${formatText(d.summary)}</p>
   </header>`;
@@ -286,7 +286,7 @@ const render = (d) => {
 
   // Footer
   h += '<footer>';
-  h += `<p class="footer-email"><a href="mailto:${d.email}">${d.email}</a></p>`;
+  h += `<p class="footer-email"><a href="mailto:${d.email}">${d.email}</a><span class="footer-sep"> · </span><span class="footer-wechat">WeChat: ${d.wechat}</span></p>`;
   h += `<p class="footer-location">${d.current_location} · ${d.last_modified}</p>`;
   h += '</footer>';
 
@@ -316,7 +316,7 @@ const load = async (lang) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  const saved = localStorage.getItem('lang') || 'en';
+  const saved = localStorage.getItem('lang') || 'cn';
   load(saved).then(() => {
     setTimeout(() => { document.querySelector('main').classList.add('loaded'); }, 600);
   });

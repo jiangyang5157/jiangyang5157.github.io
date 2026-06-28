@@ -88,7 +88,6 @@
     line-height: 1.08; letter-spacing: -0.02em; color: var(--text);
     display: flex; justify-content: space-between; align-items: baseline;
   }
-  .hero .sub { font-size: 1.05rem; color: var(--text-2); margin-top: 0.6rem; font-weight: 400; }
   .hero .tag { font-size: 0.95rem; color: var(--text-3); margin-top: 1rem; max-width: 420px; line-height: 1.6; }
   .hero .tag strong { color: var(--green); font-weight: 600; }
 
@@ -234,8 +233,7 @@ const render = (d) => {
   <button class="active" id="btn-en" onclick="switchLang('en')">EN</button>
   <button id="btn-cn" onclick="switchLang('cn')">中文</button>
   </span></h1>
-  <p class="sub">${d.title}</p>
-  <p class="tag">${formatText(d.summary)}</p>
+  <p class="tag">${d.title} | ${formatText(d.summary)}</p>
   </header>`;
 
   // Keywords

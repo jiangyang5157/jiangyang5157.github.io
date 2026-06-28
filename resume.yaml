@@ -96,17 +96,15 @@ resume:
           period: {en: Apr 2026 – Jul 2026, cn: 2026 年 4 月 – 2026 年 7 月}
           bullets:
             en:
-              - "Architected a multi-agent adversarial reasoning system: two LLM agents debate across multiple rounds, with a third Evolver agent optimizing strategy parameters through sandbox-validated mutations. Decisions only pass after surviving adversarial critique."
-              - "Built an autonomous monitoring pipeline: lightweight signal detection continuously evaluates conditions, activates heavyweight LLM reasoning only on high-confluence triggers, and delivers automated notifications – balancing decision quality with AI cost."
-              - "Designed a provider-agnostic AI integration layer (AbstractAIClient) supporting Gemini, DeepSeek, and Claude – hot-swappable LLM backends without changing agent logic."
-              - "Engineered a Guardian safety layer with hard constraints and circuit breakers: every decision validated before execution; consecutive failures trigger automatic halt and alert."
-              - "Leveraged Python, FastAPI, and YAML-driven configuration to build a comprehensive test suite across unit, integration, and system layers."
+              - "Architect a multi-agent adversarial reasoning system: two LLM agents debate across multiple rounds, ensuring decisions only pass after surviving adversarial critique."
+              - "Govern the system via YAML configurations to dynamically manage the LLM reasoning book and decision quality, enabling the third Evolver agent to execute sandbox-validated mutations for continuous self-evolution."
+              - "Build an autonomous monitoring pipeline where lightweight signal detection continuously evaluates conditions, activating heavyweight LLM adversarial reasoning only on high-confluence triggers to balance decision quality with AI compute costs."
+              - "Design a provider-agnostic LLM integration layer, enabling hot-swappable Gemini, DeepSeek, and Qwen APIs."
             cn:
-              - "架构多智能体对抗性推理系统：两个 LLM 智能体在多个轮次中辩论，第三个进化器智能体通过沙箱验证的变异优化策略参数。决策仅在通过对抗性审查后才能生效。"
-              - "构建自主监控流水线：轻量级信号检测持续评估状态，仅在高汇聚触发条件下激活 LLM 深度推理，并自动推送结果通知 – 在决策质量与 AI 调用成本间取得平衡。"
-              - "设计多供应商 AI 集成层 (AbstractAIClient)，支持 Gemini、DeepSeek 及 Claude – 无需修改智能体逻辑即可热切换 LLM 后端。"
-              - "构建 Guardian 安全层，通过硬约束与熔断机制实现：每个决策在执行前必须通过验证；连续失败触发自动停止并告警。"
-              - "基于 Python、FastAPI 及 YAML 驱动配置，构建涵盖单元、集成与系统层的完整测试套件。"
+              - "架构多智能体对抗性推理系统：两个 LLM 智能体在多个轮次中辩论，确保决策仅在通过对抗性审查后生效。"
+              - "通过 YAML 配置控制整套系统，动态管控 LLM 推理标准与决策质量，由此赋能第三个进化器智能体执行沙箱验证的变异以跑通持续自进化。"
+              - "构建自主监控流水线：轻量级信号检测持续评估状态，仅在高汇聚触发条件下激活 LLM 深度对抗推理，在决策质量与 AI 调用成本间取得平衡。"
+              - "设计多供应商 LLM 集成层，支持热切换 Gemini、DeepSeek 及 Qwen API。"
           links:
             - text: {en: GitHub, cn: GitHub}
               url: https://github.com/jiangyang5157/crypto

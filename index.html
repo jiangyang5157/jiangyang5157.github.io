@@ -68,7 +68,7 @@
   /* Section label */
   .sec-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em;
+    font-size: 0.85rem; font-weight: 400; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--green);
     margin-bottom: 1.5rem;
   }
@@ -120,7 +120,7 @@
   .rs-block:last-child { margin-bottom: 0; }
   .rs-block > h3 {
     font-family: 'Space Mono', monospace;
-    font-size: 0.72rem; font-weight: 400; letter-spacing: 0.12em;
+    font-size: 0.85rem; font-weight: 400; letter-spacing: 0.12em;
     text-transform: uppercase; color: var(--green); margin-bottom: 1.25rem;
   }
   .rs-item {
@@ -200,132 +200,49 @@
   <!-- populated by JS -->
 </main>
 
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 <script>
-// ── Inline markdown helpers ──
-function parseInline(text) {
-  return text
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+// ── Formatting helpers ──
+function formatText(text) {
+  if (!text) return '';
+  return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 }
 
-// ── Parser ──
-function parse(text) {
-  const lines = text.split('\n');
-  const data = {
-    hero: { name: '', subtitle: '', summary: '' },
-    keywords_label: '',
-    keywords_bridge: '',
-    keywords: [],
-    contact: '',
-    footer: '',
-    resume: { summary: [], sections: [] }
-  };
-
-  let i = 0;
-
-  // Phase 1: metadata (until first ---)
-  while (i < lines.length) {
-    const line = lines[i].trim();
-    if (line === '---') { i++; break; }
-    if (line.startsWith('# ')) data.hero.name = line.slice(2);
-    else if (line.startsWith('## ')) data.hero.subtitle = line.slice(3);
-    else if (line.startsWith('@summary ')) data.hero.summary = parseInline(line.slice(9));
-    else if (line.startsWith('@contact ')) data.contact = line.slice(9);
-    else if (line.startsWith('@footer ')) data.footer = line.slice(8);
-    i++;
+// ── Language resolver ──
+// Walks the YAML tree. Any object with {en, cn} keys is a lang-map — pick the
+// matching language. Arrays and plain objects recurse. Primitives pass through.
+const resolveLang = (node, lang) => {
+  if (node === null || node === undefined) return node;
+  if (Array.isArray(node)) return node.map(v => resolveLang(v, lang));
+  if (typeof node === 'object') {
+    if ('en' in node && 'cn' in node) return resolveLang(node[lang], lang);
+    const out = {};
+    Object.keys(node).forEach(k => { out[k] = resolveLang(node[k], lang); });
+    return out;
   }
-
-  // Phase 2: keywords — capture ## heading as label, then parse groups
-  while (i < lines.length) {
-    const line = lines[i].trim();
-    if (line === '---') { i++; break; }
-    if (line.startsWith('## ')) { data.keywords_label = line.slice(3); i++; continue; }
-    if (line.startsWith('### ')) {
-      const group = { name: parseInline(line.slice(4)), tags: [] };
-      i++;
-      while (i < lines.length && lines[i].trim().startsWith('- ')) {
-        group.tags.push(lines[i].trim().slice(2));
-        i++;
-      }
-      data.keywords.push(group);
-    } else if (data.keywords.length === 0 && line !== '') {
-      data.keywords_bridge = data.keywords_bridge
-        ? data.keywords_bridge + ' ' + parseInline(line)
-        : parseInline(line);
-      i++;
-    } else {
-      i++;
-    }
-  }
-
-  // Phase 3: resume — capture ## heading as label, then parse summary
-  while (i < lines.length) {
-    const line = lines[i].trim();
-    if (line.startsWith('## ')) { data.resume.heading = line.slice(3); i++; continue; }
-    if (line.startsWith('### ')) break;
-    if (line !== '' && !line.startsWith('---')) {
-      data.resume.summary.push(parseInline(line));
-    }
-    i++;
-  }
-
-  // Parse resume sections (### Section)
-  while (i < lines.length) {
-    const line = lines[i].trim();
-    if (line === '---' || line === '') { i++; continue; }
-    if (line.startsWith('### ')) {
-      const section = { title: parseInline(line.slice(4)), items: [] };
-      i++;
-      // Parse items within section (#### Item)
-      while (i < lines.length) {
-        const l2 = lines[i].trim();
-        if (l2.startsWith('### ') || l2 === '---') break;
-        if (l2.startsWith('#### ')) {
-          const item = { name: parseInline(l2.slice(5)), meta: '', role: '', bullets: [], links: [] };
-          i++;
-          while (i < lines.length) {
-            const l3 = lines[i].trim();
-            if (l3.startsWith('#### ') || l3.startsWith('### ') || l3 === '---') break;
-            if (l3.startsWith('@meta ')) item.meta = parseInline(l3.slice(6));
-            else if (l3.startsWith('@role ')) item.role = parseInline(l3.slice(6));
-            else if (l3.startsWith('- ')) item.bullets.push(parseInline(l3.slice(2)));
-            else if (l3.startsWith('@link ')) item.links.push(parseInline(l3.slice(6)));
-            i++;
-          }
-          section.items.push(item);
-        } else {
-          i++;
-        }
-      }
-      data.resume.sections.push(section);
-    } else {
-      i++;
-    }
-  }
-
-  return data;
-}
+  return node;
+};
 
 // ── Renderer ──
-function render(data) {
+const render = (d) => {
   let h = '';
 
   // Hero
-  h += '<header class="hero">';
-  h += `<h1>${data.hero.name.replace(/\n/g,'<br>')}</h1>`;
-  h += `<p class="sub">${data.hero.subtitle}</p>`;
-  h += `<p class="tag">${data.hero.summary}</p>`;
-  h += '<div class="act-row"><div class="lang-pill">';
-  h += `<button class="active" id="btn-en" onclick="switchLang('en')">EN</button>`;
-  h += `<button id="btn-cn" onclick="switchLang('cn')">中文</button>`;
-  h += '</div></div></header>';
+  h += `<header class="hero">
+  <h1>${d.name.replace(/\n/g, '<br>')}</h1>
+  <p class="sub">${d.title}</p>
+  <p class="tag">${formatText(d.summary)}</p>
+  <div class="act-row"><div class="lang-pill">
+  <button class="active" id="btn-en" onclick="switchLang('en')">EN</button>
+  <button id="btn-cn" onclick="switchLang('cn')">中文</button>
+  </div></div></header>`;
 
   // Keywords
   h += '<section>';
-  h += `<h2 class="sec-label">${data.keywords_label}</h2>`;
-  if (data.keywords_bridge) h += `<p class="kw-bridge">${data.keywords_bridge}</p>`;
+  h += `<h2 class="sec-label">${d.keywords.label}</h2>`;
+  if (d.keywords.bridge) h += `<p class="kw-bridge">${d.keywords.bridge}</p>`;
   h += '<div class="kw-grid">';
-  data.keywords.forEach(kw => {
+  d.keywords.groups.forEach(kw => {
     h += `<div class="kw-group"><h3>${kw.name}</h3><div class="kw-tags">`;
     kw.tags.forEach(t => { h += `<span>${t}</span>`; });
     h += '</div></div>';
@@ -334,31 +251,32 @@ function render(data) {
 
   // Resume
   h += '<section>';
-  h += `<h2 class="sec-label">${data.resume.heading || 'Resume'}</h2>`;
+  h += `<h2 class="sec-label">${d.resume.label}</h2>`;
 
-  // Summary
-  if (data.resume.summary.length) {
-    h += '<div class="rs-summary">';
-    data.resume.summary.forEach(p => { h += `<p>${p}</p>`; });
-    h += '</div>';
+  if (d.resume.bridge) {
+    h += `<div class="rs-summary"><p>${d.resume.bridge}</p></div>`;
   }
 
-  // Sections
-  data.resume.sections.forEach(sec => {
+  d.resume.sections.forEach(sec => {
     h += `<div class="rs-block"><h3>${sec.title}</h3>`;
     sec.items.forEach(item => {
       h += '<div class="rs-item">';
       h += `<div class="rs-item-head"><strong>${item.name}</strong>`;
-      if (item.meta) h += `<span class="date">${item.meta}</span>`;
+      const metaParts = [];
+      if (item.location) metaParts.push(item.location);
+      if (item.period) metaParts.push(item.period);
+      if (metaParts.length) h += `<span class="date">${metaParts.join(' · ')}</span>`;
       h += '</div>';
       if (item.role) h += `<p class="rs-role">${item.role}</p>`;
-      if (item.bullets.length) {
+      if (item.bullets && item.bullets.length) {
         h += '<ul>';
         item.bullets.forEach(b => { h += `<li>${b}</li>`; });
         h += '</ul>';
       }
-      if (item.links.length) {
-        h += `<div class="rs-links">${item.links.join(' ')}</div>`;
+      if (item.links && item.links.length) {
+        h += '<div class="rs-links">';
+        item.links.forEach(l => { h += `<a href="${l.url}">${l.text}</a>`; });
+        h += '</div>';
       }
       h += '</div>';
     });
@@ -369,31 +287,39 @@ function render(data) {
 
   // Footer
   h += '<footer>';
-  h += `<p class="footer-email"><a href="mailto:${data.contact}">${data.contact}</a></p>`;
-  h += `<p class="footer-location">${data.footer}</p>`;
+  h += `<p class="footer-email"><a href="mailto:${d.email}">${d.email}</a></p>`;
+  h += `<p class="footer-location">${d.name} · ${d.current_location} · ${d.last_modified}</p>`;
   h += '</footer>';
 
   return h;
-}
+};
 
 // ── App ──
 const cache = {};
 
-async function load(lang) {
-  const file = lang === 'en' ? 'resume_en.md' : 'resume_cn.md';
-  if (!cache[lang]) {
-    const res = await fetch(file);
-    const text = await res.text();
-    cache[lang] = parse(text);
+const load = async (lang) => {
+  try {
+    if (!cache.yaml) {
+      const res = await fetch('resume.yaml');
+      if (!res.ok) throw new Error(`Failed to load resume data (${res.status})`);
+      const text = await res.text();
+      cache.yaml = jsyaml.load(text);
+    }
+    const data = resolveLang(cache.yaml, lang);
+    document.querySelector('main').innerHTML = render(data);
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-cn').classList.toggle('active', lang === 'cn');
+    localStorage.setItem('lang', lang);
+  } catch (err) {
+    document.querySelector('main').innerHTML = '<p style="padding:2rem;color:var(--text-2);">Failed to load resume. Check your connection and try again.</p>';
+    console.error(err);
   }
-  document.querySelector('main').innerHTML = render(cache[lang]);
-  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-  document.getElementById('btn-cn').classList.toggle('active', lang === 'cn');
-}
+};
 
 document.addEventListener('DOMContentLoaded', () => {
-  load('en').then(() => {
-    setTimeout(() => document.querySelector('main').classList.add('loaded'), 600);
+  const saved = localStorage.getItem('lang') || 'en';
+  load(saved).then(() => {
+    setTimeout(() => { document.querySelector('main').classList.add('loaded'); }, 600);
   });
 });
 window.switchLang = lang => {

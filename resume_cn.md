@@ -1,14 +1,15 @@
 # 江洋
 ## 软件工程师
-@tagline **12 年以上**移动端工程经验 — **Android**、SDK、CI/CD。**AI 智能体**方面亦有实践经验。
-@keywords_label 关键词
-@keywords_bridge 移动端平台工程是我深耕的领域，AI 是我前行的方向。
+@summary **12 年以上**移动端工程经验 — **Android**、SDK、CI/CD。**AI 智能体**方面亦有实践经验。
 @contact jiangyang5157@gmail.com
-@footer 江洋 · 新西兰，奥克兰
+@footer 江洋 · 新西兰，奥克兰 · 更新于 2026 年 6 月
 
 ---
 
 ## 关键词
+
+移动端平台工程是我深耕的领域，AI 是我前行的方向。
+
 ### 移动端与跨平台
 - Android (Kotlin / Java)
 - Flutter (Dart)
@@ -47,7 +48,7 @@
 - 在迭代周期早期与 PM 和 UX 合作细化需求，在开发前消除功能风险，确保团队聚焦正确的迭代目标。
 - 通过严格的代码审查、技术指导和优化测试工具链提升工程质量 —— 简化开发到 QA 的交付流程，降低发布摩擦。
 - 主导跨团队移动端分会倡议：编码规范、最佳实践及团队间知识共享。
-- 负责移动端发布协调与 CI/CD 流水线改进，包括从 Azure DevOps (TFS) 到 GitHub Enterprise 的持续迁移。
+- 参与移动端发布协调与 CI/CD 流水线改进，包括从 Azure DevOps (TFS) 到 GitHub Enterprise 的持续迁移。
 
 #### Fiserv
 @meta 奥克兰 · 2014 年 10 月 – 2021 年 8 月

@@ -18,13 +18,12 @@
     --text:     #1a1a1a;
     --text-2:   #6e6e6e;
     --text-3:   #a0a09e;
-    --border:   #e6e4e0;
     --rule-w:   3px;
     --gap:      2rem;
     --max-w:    640px;
   }
 
-  html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+  html { scroll-behavior: smooth; }
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -152,9 +151,7 @@
 
   /* Mobile */
   @media (max-width: 560px) {
-    main { padding-left: 0; padding-top: 1rem; }
-    main::before { top: 0.45rem; left: 0; right: 0; bottom: auto; width: 100%; height: var(--rule-w); }
-    main::after { top: 0.26rem; left: -0.18rem; }
+    main { padding-left: calc(1.25rem + var(--rule-w)); }
     .hero .act-row { top: 0.25rem; }
     .hero { padding-top: 2.5rem; }
     section { padding: 2rem 0; }
@@ -211,20 +208,11 @@ function parseInline(text) {
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
 }
 
-function renderLinks(raw) {
-  if (!raw) return '';
-  const links = raw.match(/\[([^\]]+)\]\(([^)]+)\)/g) || [];
-  return links.map(l => {
-    const m = l.match(/\[([^\]]+)\]\(([^)]+)\)/);
-    return `<a href="${m[2]}">${m[1]}</a>`;
-  }).join(' ');
-}
-
 // ── Parser ──
 function parse(text) {
   const lines = text.split('\n');
   const data = {
-    hero: { name: '', subtitle: '', tagline: '' },
+    hero: { name: '', subtitle: '', summary: '' },
     keywords_label: '',
     keywords_bridge: '',
     keywords: [],
@@ -241,18 +229,17 @@ function parse(text) {
     if (line === '---') { i++; break; }
     if (line.startsWith('# ')) data.hero.name = line.slice(2);
     else if (line.startsWith('## ')) data.hero.subtitle = line.slice(3);
-    else if (line.startsWith('@tagline ')) data.hero.tagline = parseInline(line.slice(9));
-    else if (line.startsWith('@keywords_label ')) data.keywords_label = line.slice(16);
-    else if (line.startsWith('@keywords_bridge ')) data.keywords_bridge = parseInline(line.slice(17));
+    else if (line.startsWith('@summary ')) data.hero.summary = parseInline(line.slice(9));
     else if (line.startsWith('@contact ')) data.contact = line.slice(9);
     else if (line.startsWith('@footer ')) data.footer = line.slice(8);
     i++;
   }
 
-  // Phase 2: keywords (until ---)
+  // Phase 2: keywords — capture ## heading as label, then parse groups
   while (i < lines.length) {
     const line = lines[i].trim();
     if (line === '---') { i++; break; }
+    if (line.startsWith('## ')) { data.keywords_label = line.slice(3); i++; continue; }
     if (line.startsWith('### ')) {
       const group = { name: parseInline(line.slice(4)), tags: [] };
       i++;
@@ -261,6 +248,11 @@ function parse(text) {
         i++;
       }
       data.keywords.push(group);
+    } else if (data.keywords.length === 0 && line !== '') {
+      data.keywords_bridge = data.keywords_bridge
+        ? data.keywords_bridge + ' ' + parseInline(line)
+        : parseInline(line);
+      i++;
     } else {
       i++;
     }
@@ -322,7 +314,7 @@ function render(data) {
   h += '<header class="hero">';
   h += `<h1>${data.hero.name.replace(/\n/g,'<br>')}</h1>`;
   h += `<p class="sub">${data.hero.subtitle}</p>`;
-  h += `<p class="tag">${data.hero.tagline}</p>`;
+  h += `<p class="tag">${data.hero.summary}</p>`;
   h += '<div class="act-row"><div class="lang-pill">';
   h += `<button class="active" id="btn-en" onclick="switchLang('en')">EN</button>`;
   h += `<button id="btn-cn" onclick="switchLang('cn')">中文</button>`;

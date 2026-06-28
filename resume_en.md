@@ -1,14 +1,15 @@
 # Yang Jiang
 ## Software Engineer
-@tagline **12+ years** of mobile engineering — **Android**, SDKs, CI/CD. Hands-on with **AI agents**.
-@keywords_label Keywords
-@keywords_bridge Mobile platform engineering is where I'm deepest; AI are where I'm headed.
+@summary **12+ years** of mobile engineering — **Android**, SDKs, CI/CD. Hands-on with **AI agents**.
 @contact jiangyang5157@gmail.com
-@footer Yang Jiang · Auckland, New Zealand
+@footer Yang Jiang · Auckland, New Zealand · Updated June 2026
 
 ---
 
 ## Keywords
+
+Mobile platform engineering is where I'm deepest; AI are where I'm headed.
+
 ### Mobile & Cross-Platform
 - Android (Kotlin / Java)
 - Flutter (Dart)
@@ -47,7 +48,7 @@ Bridges mobile-platform engineering with LLM agent architecture — multi-agent 
 - Partner with PMs and UX early-cycle to refine requirements, de-risk features, and keep the squad focused on the right outcomes each sprint.
 - Raise engineering quality through rigorous code review, mentoring, and investing in tester tooling — streamlining dev-to-QA handoff and reducing release friction.
 - Lead cross-squad mobile chapter initiatives: coding standards, best practices, and knowledge sharing across teams.
-- Own mobile release coordination and CI/CD pipeline improvements, including the migration from Azure DevOps (TFS) to GitHub Enterprise.
+- Participated in mobile release coordination and CI/CD pipeline improvements, including the migration from Azure DevOps (TFS) to GitHub Enterprise.
 
 #### Fiserv
 @meta Auckland · Oct 2014 – Aug 2021

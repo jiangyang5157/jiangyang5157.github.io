@@ -1,8 +1,8 @@
 # 江洋
 ## 软件工程师
 @tagline **12 年以上**移动端工程经验 — Android、SDK、CI/CD。**AI 智能体**方面亦有实践经验。
-@cta 查看简历 ↓
 @keywords_label 关键词
+@keywords_bridge 移动端平台工程是我深耕的领域，AI 智能体系统是我前行的方向。
 @contact jiangyang5157@gmail.com
 @footer 江洋 · 新西兰，奥克兰
 

@@ -1,8 +1,8 @@
 # Yang Jiang
 ## Software Engineer
 @tagline **12+ years** of mobile engineering — Android, SDKs, CI/CD. Hands-on with **AI agents**.
-@cta View Resume ↓
 @keywords_label Keywords
+@keywords_bridge Mobile platform engineering is where I'm deepest; AI agent systems are where I'm headed.
 @contact jiangyang5157@gmail.com
 @footer Yang Jiang · Auckland, New Zealand
 

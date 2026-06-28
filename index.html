@@ -54,7 +54,7 @@
   .lang-pill {
     display: inline-flex; gap: 0;
     background: var(--surface); border-radius: 100px;
-    padding: 3px; font-size: 0.76rem; font-weight: 500;
+    padding: 3px; font-size: 0.78rem; font-weight: 500;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
   .lang-pill button {
@@ -69,9 +69,16 @@
   /* Section label */
   .sec-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.7rem; font-weight: 400; letter-spacing: 0.14em;
+    font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--green);
     margin-bottom: 1.5rem;
+  }
+
+  /* Keywords bridge */
+  .kw-bridge {
+    font-size: 0.95rem; color: var(--text-2); line-height: 1.6;
+    margin-bottom: 1.75rem; max-width: 480px;
+    font-style: italic;
   }
 
   /* Hero */
@@ -82,22 +89,20 @@
     line-height: 1.08; letter-spacing: -0.02em; color: var(--text);
   }
   .hero .sub { font-size: 1.05rem; color: var(--text-2); margin-top: 0.6rem; font-weight: 400; }
-  .hero .tag { font-size: 0.9rem; color: var(--text-3); margin-top: 1rem; max-width: 420px; line-height: 1.6; }
-  .hero .act-row { display: grid; grid-template-columns: 1fr 1fr; justify-items: start; align-items: center; margin-top: 2rem; }
-  .hero .cta {
-    display: inline-block;
-    padding: 0.55rem 1.5rem; font-size: 0.88rem; font-weight: 500;
-    color: var(--green); border: 1.5px solid var(--green); border-radius: 100px;
-    text-decoration: none; transition: all 0.2s ease;
-  }
-  .hero .cta:hover { background: var(--green); color: #fff; }
+  .hero .tag { font-size: 0.95rem; color: var(--text-3); margin-top: 1rem; max-width: 420px; line-height: 1.6; }
+  .hero .tag strong { color: var(--green); font-weight: 600; }
+  .hero .act-row { display: flex; justify-content: flex-end; margin-top: 2rem; }
 
   /* Sections */
   section { padding: 3.5rem 0; }
 
-  /* Keywords grid */
-  .kw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2.5rem; }
-  .kw-group h3 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.6rem; }
+  /* Keywords vertical stack */
+  .kw-grid { display: flex; flex-direction: column; gap: 1.25rem; }
+  .kw-group {
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--green);
+  }
+  .kw-group h3 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.45rem; color: var(--text); }
   .kw-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .kw-tags span {
     font-size: 0.78rem; font-weight: 500; color: var(--text);
@@ -108,23 +113,29 @@
 
   /* Resume */
   .rs-summary { margin-bottom: 2.5rem; }
-  .rs-summary p { font-size: 0.9rem; line-height: 1.65; color: var(--text); margin-bottom: 0.5rem; }
+  .rs-summary p { font-size: 0.95rem; line-height: 1.65; color: var(--text); margin-bottom: 0.5rem; }
 
   .rs-block { margin-bottom: 2.5rem; }
   .rs-block:last-child { margin-bottom: 0; }
   .rs-block > h3 {
     font-family: 'Space Mono', monospace;
-    font-size: 0.7rem; font-weight: 400; letter-spacing: 0.12em;
+    font-size: 0.78rem; font-weight: 400; letter-spacing: 0.12em;
     text-transform: uppercase; color: var(--green); margin-bottom: 1.25rem;
   }
-  .rs-item { margin-bottom: 1.5rem; }
+  .rs-item {
+    margin-bottom: 1.5rem;
+    padding-left: 0.75rem; margin-left: -0.75rem;
+    border-left: 2px solid transparent;
+    transition: border-color 0.2s ease;
+  }
   .rs-item:last-child { margin-bottom: 0; }
+  .rs-item:hover { border-left-color: var(--green); }
   .rs-item-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.15rem; }
-  .rs-item-head strong { font-size: 0.93rem; font-weight: 600; }
-  .rs-item-head .date { font-size: 0.82rem; color: var(--text-3); white-space: nowrap; }
+  .rs-item-head strong { font-size: 0.95rem; font-weight: 600; }
+  .rs-item-head .date { font-size: 0.78rem; color: var(--text-3); white-space: nowrap; }
   .rs-role { font-size: 0.85rem; color: var(--text-2); margin-bottom: 0.5rem; }
   .rs-item ul { padding-left: 1.3rem; }
-  .rs-item li { font-size: 0.87rem; line-height: 1.6; margin-bottom: 0.3rem; color: var(--text); }
+  .rs-item li { font-size: 0.85rem; line-height: 1.6; margin-bottom: 0.3rem; color: var(--text); }
   .rs-item li:last-child { margin-bottom: 0; }
   .rs-links { margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; }
   .rs-links a { font-size: 0.85rem; color: var(--green); text-decoration: none; font-weight: 500; }
@@ -134,7 +145,7 @@
   .contact { padding: 2.5rem 0 1.5rem; }
   .contact a { color: var(--green); text-decoration: none; font-weight: 500; }
   .contact a:hover { text-decoration: underline; }
-  .contact p { font-size: 0.9rem; color: var(--text-2); }
+  .contact p { font-size: 0.95rem; color: var(--text-2); }
 
   footer { padding: 0 0 4rem; font-size: 0.78rem; color: var(--text-3); }
 
@@ -144,14 +155,42 @@
     main::before { top: 0; left: 0; right: 0; bottom: auto; width: 100%; height: var(--rule-w); }
     main::after { top: -0.05rem; left: 0; }
     .hero { padding-top: 2.5rem; }
-    .kw-grid { grid-template-columns: 1fr; }
     section { padding: 2.5rem 0; }
     .rs-item-head { flex-direction: column; }
   }
 
+  @media (prefers-reduced-motion: no-preference) {
+    main::before {
+      transform-origin: top;
+      animation: drawRule 0.4s ease-out both;
+    }
+    main::after {
+      animation: revealDot 0.25s 0.35s ease-out both;
+    }
+    .hero {
+      animation: fadeUp 0.4s 0.15s ease-out both;
+    }
+    section, .contact, footer {
+      animation: fadeUp 0.4s 0.3s ease-out both;
+    }
+  }
+
+  @keyframes drawRule {
+    from { transform: scaleY(0); }
+    to   { transform: scaleY(1); }
+  }
+  @keyframes revealDot {
+    from { transform: scale(0); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    *, *::before, *::after { transition: none !important; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
   }
 </style>
 </head>
@@ -182,8 +221,9 @@ function renderLinks(raw) {
 function parse(text) {
   const lines = text.split('\n');
   const data = {
-    hero: { name: '', subtitle: '', tagline: '', cta: '' },
+    hero: { name: '', subtitle: '', tagline: '' },
     keywords_label: '',
+    keywords_bridge: '',
     keywords: [],
     contact: '',
     footer: '',
@@ -199,8 +239,8 @@ function parse(text) {
     if (line.startsWith('# ')) data.hero.name = line.slice(2);
     else if (line.startsWith('## ')) data.hero.subtitle = line.slice(3);
     else if (line.startsWith('@tagline ')) data.hero.tagline = parseInline(line.slice(9));
-    else if (line.startsWith('@cta ')) data.hero.cta = line.slice(5);
     else if (line.startsWith('@keywords_label ')) data.keywords_label = line.slice(16);
+    else if (line.startsWith('@keywords_bridge ')) data.keywords_bridge = parseInline(line.slice(17));
     else if (line.startsWith('@contact ')) data.contact = line.slice(9);
     else if (line.startsWith('@footer ')) data.footer = line.slice(8);
     i++;
@@ -227,7 +267,7 @@ function parse(text) {
   // Phase 3: resume — skip ## Resume / ## 简历 heading then parse summary
   while (i < lines.length) {
     const line = lines[i].trim();
-    if (line === '## Resume' || line === '## 简历') { i++; continue; }
+    if (line === '## Resume' || line === '## 简历') { data.resume.heading = line.slice(3); i++; continue; }
     if (line.startsWith('### ')) break;
     if (line !== '' && !line.startsWith('---')) {
       data.resume.summary.push(parseInline(line));
@@ -281,9 +321,7 @@ function render(data) {
   h += `<h1>${data.hero.name.replace(/\n/g,'<br>')}</h1>`;
   h += `<p class="sub">${data.hero.subtitle}</p>`;
   h += `<p class="tag">${data.hero.tagline}</p>`;
-  h += '<div class="act-row">';
-  h += `<a href="#resume" class="cta">${data.hero.cta}</a>`;
-  h += '<div class="lang-pill">';
+  h += '<div class="act-row"><div class="lang-pill">';
   h += `<button class="active" id="btn-en" onclick="switchLang('en')">EN</button>`;
   h += `<button id="btn-cn" onclick="switchLang('cn')">中文</button>`;
   h += '</div></div></header>';
@@ -291,6 +329,7 @@ function render(data) {
   // Keywords
   h += '<section>';
   h += `<h2 class="sec-label">${data.keywords_label}</h2>`;
+  if (data.keywords_bridge) h += `<p class="kw-bridge">${data.keywords_bridge}</p>`;
   h += '<div class="kw-grid">';
   data.keywords.forEach(kw => {
     h += `<div class="kw-group"><h3>${kw.name}</h3><div class="kw-tags">`;
@@ -301,7 +340,7 @@ function render(data) {
 
   // Resume
   h += '<section id="resume">';
-  h += '<h2 class="sec-label">Resume</h2>';
+  h += `<h2 class="sec-label">${data.resume.heading || 'Resume'}</h2>`;
 
   // Summary
   if (data.resume.summary.length) {

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yang Jiang — Software Engineer</title>
-<meta name="description" content="Yang Jiang — Software Engineer. Financial platforms, AI agents. Auckland, New Zealand.">
+<meta name="description" content="Yang Jiang — Software Engineer. Mobile engineering, AI agents. Auckland, New Zealand.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -12,57 +12,45 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --green:       #2d6b54;
-    --bg:          #faf8f6;
-    --surface:     #f2f0ed;
-    --text:        #1a1a1a;
-    --text-2:      #6e6e6e;
-    --text-3:      #a0a09e;
-    --border:      #e6e4e0;
-    --rule-w:      3px;
-    --gap:         2rem;
-    --max-w:       640px;
+    --green:    #2d6b54;
+    --bg:       #faf8f6;
+    --surface:  #f2f0ed;
+    --text:     #1a1a1a;
+    --text-2:   #6e6e6e;
+    --text-3:   #a0a09e;
+    --border:   #e6e4e0;
+    --rule-w:   3px;
+    --gap:      2rem;
+    --max-w:    640px;
   }
 
   html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
+    background: var(--bg); color: var(--text);
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
     padding: 0 1.5rem;
   }
 
   main {
-    max-width: var(--max-w);
-    margin: 0 auto;
+    max-width: var(--max-w); margin: 0.4rem auto 0;
     padding-left: calc(var(--gap) + var(--rule-w));
     position: relative;
   }
-
   main::before {
-    content: '';
-    position: absolute;
+    content: ''; position: absolute;
     left: 0; top: 0; bottom: 0;
-    width: var(--rule-w);
-    background: var(--green);
-    border-radius: 2px;
+    width: var(--rule-w); background: var(--green); border-radius: 2px;
   }
-  /* top-of-rule marker */
   main::after {
-    content: '';
-    position: absolute;
+    content: ''; position: absolute;
     left: -0.2rem; top: -0.1rem;
     width: 0.56rem; height: 0.56rem;
-    background: var(--green);
-    border-radius: 50%;
+    background: var(--green); border-radius: 50%;
   }
 
-  .mono { font-family: 'Space Mono', 'SF Mono', 'Cascadia Code', ui-monospace, monospace; }
-
-  /* ── Lang toggle (inline with CTA) ── */
+  /* Lang pill */
   .lang-pill {
     display: inline-flex; gap: 0;
     background: var(--surface); border-radius: 100px;
@@ -78,12 +66,7 @@
   .lang-pill button.active { background: var(--green); color: #fff; }
   .lang-pill button:hover:not(.active) { color: var(--text); }
 
-  .hero .act-row {
-    display: flex; align-items: center; gap: 1rem;
-    margin-top: 2rem; flex-wrap: wrap;
-  }
-
-  /* ── Section label ── */
+  /* Section label */
   .sec-label {
     font-family: 'Space Mono', monospace;
     font-size: 0.7rem; font-weight: 400; letter-spacing: 0.14em;
@@ -91,16 +74,16 @@
     margin-bottom: 1.5rem;
   }
 
-  /* ── Hero ── */
-  .hero { padding-top: clamp(4rem, 12vh, 7rem); padding-bottom: 2rem; }
+  /* Hero */
+  .hero { padding-top: clamp(4rem,12vh,7rem); padding-bottom: 2rem; }
   .hero h1 {
     font-family: 'Space Mono', monospace;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 700; line-height: 1.08; letter-spacing: -0.02em;
-    color: var(--text);
+    font-size: clamp(2.5rem,6vw,4.5rem); font-weight: 700;
+    line-height: 1.08; letter-spacing: -0.02em; color: var(--text);
   }
   .hero .sub { font-size: 1.05rem; color: var(--text-2); margin-top: 0.6rem; font-weight: 400; }
   .hero .tag { font-size: 0.9rem; color: var(--text-3); margin-top: 1rem; max-width: 420px; line-height: 1.6; }
+  .hero .act-row { display: flex; align-items: center; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
   .hero .cta {
     display: inline-block;
     padding: 0.55rem 1.5rem; font-size: 0.88rem; font-weight: 500;
@@ -109,33 +92,31 @@
   }
   .hero .cta:hover { background: var(--green); color: #fff; }
 
-  /* ── Sections ── */
+  /* Sections */
   section { padding: 3.5rem 0; }
 
-  /* ── Skills ── */
-  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2.5rem; }
-  .sk-group h3 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.6rem; }
-  .sk-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .sk-tags span {
+  /* Keywords grid */
+  .kw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2.5rem; }
+  .kw-group h3 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.6rem; }
+  .kw-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .kw-tags span {
     font-size: 0.78rem; font-weight: 500; color: var(--text);
     background: var(--surface); padding: 0.25rem 0.7rem; border-radius: 5px;
     transition: transform 0.15s ease, background 0.15s ease;
   }
-  .sk-tags span:hover {
-    transform: translateY(-1px);
-    background: #e8ede8;
-  }
+  .kw-tags span:hover { transform: translateY(-1px); background: #e8ede8; }
 
-  /* ── Resume ── */
+  /* Resume */
+  .rs-summary { margin-bottom: 2.5rem; }
+  .rs-summary p { font-size: 0.9rem; line-height: 1.65; color: var(--text); margin-bottom: 0.5rem; }
+
   .rs-block { margin-bottom: 2.5rem; }
   .rs-block:last-child { margin-bottom: 0; }
   .rs-block > h3 {
     font-family: 'Space Mono', monospace;
     font-size: 0.7rem; font-weight: 400; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--green);
-    margin-bottom: 1.25rem;
+    text-transform: uppercase; color: var(--green); margin-bottom: 1.25rem;
   }
-  .rs-block > p { font-size: 0.9rem; line-height: 1.65; color: var(--text); margin-bottom: 0.5rem; }
   .rs-item { margin-bottom: 1.5rem; }
   .rs-item:last-child { margin-bottom: 0; }
   .rs-item-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.15rem; }
@@ -149,7 +130,7 @@
   .rs-links a { font-size: 0.85rem; color: var(--green); text-decoration: none; font-weight: 500; }
   .rs-links a:hover { text-decoration: underline; }
 
-  /* ── Contact ── */
+  /* Contact */
   .contact { padding: 2.5rem 0 1.5rem; }
   .contact a { color: var(--green); text-decoration: none; font-weight: 500; }
   .contact a:hover { text-decoration: underline; }
@@ -157,18 +138,13 @@
 
   footer { padding: 0 0 4rem; font-size: 0.78rem; color: var(--text-3); }
 
-  /* ── Lang visibility ── */
-  .lang-en, .lang-cn { transition: opacity 0.2s ease; }
-  body.lang-cn .lang-en { display: none; }
-  body.lang-en .lang-cn { display: none; }
-
-  /* ── Mobile ── */
+  /* Mobile */
   @media (max-width: 560px) {
     main { padding-left: 0; padding-top: var(--rule-w); }
     main::before { top: 0; left: 0; right: 0; bottom: auto; width: 100%; height: var(--rule-w); }
-    main::after { top: -0.05rem; left: 0; }  /* marker on left of horizontal rule */
+    main::after { top: -0.05rem; left: 0; }
     .hero { padding-top: 2.5rem; }
-    .skills-grid { grid-template-columns: 1fr; }
+    .kw-grid { grid-template-columns: 1fr; }
     section { padding: 2.5rem 0; }
     .rs-item-head { flex-direction: column; }
   }
@@ -179,264 +155,216 @@
   }
 </style>
 </head>
-<body class="lang-en">
+<body>
 
 <main>
-
-  <!-- ═══════ HERO ═══════ -->
-  <header class="hero">
-    <h1><span class="lang-en">Yang<br>Jiang</span><span class="lang-cn">江洋</span></h1>
-    <p class="sub"><span class="lang-en">Software Engineer</span><span class="lang-cn">软件工程师</span></p>
-    <p class="tag">
-      <span class="lang-en"><strong>12+ years</strong> of mobile engineering — Android, SDKs, CI/CD. Hands-on with <strong>AI agents</strong>.</span>
-      <span class="lang-cn"><strong>12 年以上</strong>移动端工程经验 — Android、SDK、CI/CD。<strong>AI 智能体</strong>方面亦有实践经验。</span>
-    </p>
-    <div class="act-row">
-      <a href="#resume" class="cta"><span class="lang-en">View Resume ↓</span><span class="lang-cn">查看简历 ↓</span></a>
-      <div class="lang-pill">
-        <button class="active" onclick="setLang('en')">EN</button>
-        <button onclick="setLang('cn')">中文</button>
-      </div>
-    </div>
-  </header>
-
-  <!-- ═══════ SKILLS ═══════ -->
-  <section>
-    <h2 class="sec-label lang-en">Keywords</h2>
-    <h2 class="sec-label lang-cn">关键词</h2>
-    <div class="skills-grid">
-
-      <div class="sk-group">
-        <h3 class="lang-en">AI &amp; Agent Systems</h3>
-        <h3 class="lang-cn">AI 与智能体系统</h3>
-        <div class="sk-tags">
-          <span>Multi-Agent Orchestration</span><span>Adversarial Debate Protocols</span>
-          <span>LLM Prompt Engineering</span><span>Autonomous Decision Pipelines</span>
-          <span>Evolutionary Strategy Optimization</span>
-        </div>
-      </div>
-
-      <div class="sk-group">
-        <h3 class="lang-en">Mobile &amp; Cross-Platform</h3>
-        <h3 class="lang-cn">移动端与跨平台</h3>
-        <div class="sk-tags">
-          <span>Android (Kotlin / Java)</span><span>Flutter (Dart)</span>
-          <span>Clean Architecture</span><span>Modular SDK Design</span>
-        </div>
-      </div>
-
-      <div class="sk-group">
-        <h3 class="lang-en">Backend &amp; Systems</h3>
-        <h3 class="lang-cn">后端与系统</h3>
-        <div class="sk-tags">
-          <span>Go</span><span>Python</span><span>C / C++</span><span>REST API Design</span>
-        </div>
-      </div>
-
-      <div class="sk-group">
-        <h3 class="lang-en">Engineering Practices</h3>
-        <h3 class="lang-cn">工程实践</h3>
-        <div class="sk-tags">
-          <span>TDD</span><span>CI/CD</span><span>Agile / Scrum</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════ RESUME ═══════ -->
-  <section id="resume">
-
-    <!-- ── EN ── -->
-    <div class="lang-en">
-
-      <h2 class="sec-label">Resume</h2>
-
-      <div class="rs-block">
-        <p>Bridges mobile-platform engineering with LLM agent architecture — multi-agent debate protocols, adversarial validation, and autonomous decision pipelines. Proven track record of modular frameworks that accelerate delivery in regulated environments.</p>
-      </div>
-
-      <div class="rs-block">
-        <h3>Employment</h3>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>ASB Bank</strong><span class="date">Auckland · Aug 2021 – Present</span></div>
-          <p class="rs-role">Software Specialist</p>
-          <ul>
-            <li>Partner with PMs and UX early-cycle to refine requirements, de-risk features, and keep the squad focused on the right outcomes each sprint.</li>
-            <li>Raise engineering quality through rigorous code review, mentoring, and investing in tester tooling — streamlining dev-to-QA handoff and reducing release friction.</li>
-            <li>Lead cross-squad mobile chapter initiatives: coding standards, best practices, and knowledge sharing across teams.</li>
-            <li>Own mobile release coordination and CI/CD pipeline improvements, including the migration from Azure DevOps (TFS) to GitHub Enterprise.</li>
-          </ul>
-        </div>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>Fiserv</strong><span class="date">Auckland · Oct 2014 – Aug 2021</span></div>
-          <p class="rs-role">Senior Mobile Engineer</p>
-          <ul>
-            <li>Owned product and feature quality across a modular mobile banking SDK deployed to financial institutions globally — hands-on coding, deep code review, and raising consistency bar across the codebase.</li>
-            <li>Led the architectural transition from monolithic to Clean Architecture with dependency injection, decoupling core banking logic from dynamic UI theming.</li>
-            <li>Delivered complex subsystems end-to-end: biometric authentication, Remote Deposit Capture (Camera2), secure payments and transfers, location-aware services, cross-timezone scheduling, and deep-link routing — each with production-grade security requirements.</li>
-          </ul>
-        </div>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>Freelance</strong><span class="date">Guangzhou · Mar 2012 – Apr 2012</span></div>
-          <p class="rs-role">Developer</p>
-          <ul><li>Built an Android multimedia learning platform with video playback, subtitle sync, voice recording, and a vocabulary retention engine based on the Ebbinghaus forgetting curve.</li></ul>
-        </div>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>Inventec Co. Ltd.</strong><span class="date">Shanghai · Nov 2009 – Dec 2011</span></div>
-          <p class="rs-role">Android Developer</p>
-          <ul><li>Architected a suite of system-integrated Android applications for the Dr.eye mini netbook, including dictionary engine, multimedia education modules, and weather widgets. Optimized for HTC, Asus, and Foxconn hardware.</li></ul>
-        </div>
-      </div>
-
-      <div class="rs-block">
-        <h3>Projects</h3>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>Multi-Agent Decision System</strong><span class="date">Apr 2026 – Jul 2026</span></div>
-          <ul>
-            <li>Architected a multi-agent adversarial reasoning system: two LLM agents debate across multiple rounds, with a third Evolver agent optimizing strategy parameters through sandbox-validated mutations. Decisions only pass after surviving adversarial critique.</li>
-            <li>Built an autonomous monitoring pipeline: lightweight signal detection continuously evaluates conditions, activates heavyweight LLM reasoning only on high-confluence triggers, and delivers automated notifications — balancing decision quality with AI cost.</li>
-            <li>Designed a provider-agnostic AI integration layer (AbstractAIClient) supporting Gemini, DeepSeek, and Claude — hot-swappable LLM backends without changing agent logic.</li>
-            <li>Engineered a Guardian safety layer with hard constraints and circuit breakers: every decision validated before execution; consecutive failures trigger automatic halt and alert.</li>
-            <li>Python, FastAPI, YAML-driven configuration, comprehensive test suite across unit, integration, and system layers.</li>
-          </ul>
-          <div class="rs-links"><a href="https://github.com/jiangyang5157/crypto">GitHub →</a></div>
-        </div>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>Sudoku Puzzle Engine</strong><span class="date">Aug 2014 – Oct 2014</span></div>
-          <ul><li>Built an Android Sudoku app generating unique puzzles in milliseconds, powered by a Go-based Knuth's Algorithm X solver.</li></ul>
-          <div class="rs-links">
-            <a href="https://github.com/jiangyang5157/sudoku-android">Android →</a>
-            <a href="https://github.com/jiangyang5157/go-sudoku">Go Solver →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="rs-block">
-        <h3>Education</h3>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>Master of Information Sciences (Software Engineering)</strong><span class="date">2016</span></div>
-          <p class="rs-role">Massey University — Auckland</p>
-          <ul><li>Grade A for an immersive VR geographic visualization platform on Android — custom GLES/GLSL GPU shaders with ray-casting spatial interaction.</li></ul>
-        </div>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>PGDip Information Science (Software Engineering)</strong><span class="date">2013 – 2014</span></div>
-          <p class="rs-role">Massey University — Auckland</p>
-        </div>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>BSc Electronics &amp; Communications Engineering</strong><span class="date">2005 – 2009</span></div>
-          <p class="rs-role">Xiamen University — Xiamen</p>
-          <ul><li>Undergraduate Excellence Award for an autonomous traffic control system. Programmed core logic in AT89S52, 8225A, and 74HC245 Assembly, designed and fabricated custom PCBs with peripheral logic ICs for real-time hardware-level control.</li></ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── CN ── -->
-    <div class="lang-cn">
-
-      <h2 class="sec-label">简历</h2>
-
-      <div class="rs-block">
-        <p>兼具移动端/平台工程能力与 LLM 智能体架构实践经验 —— 多智能体辩论协议、对抗性验证及自主决策流水线。擅长构建模块化框架，在受监管环境中加速产品交付。</p>
-      </div>
-
-      <div class="rs-block">
-        <h3>工作经历</h3>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>ASB 银行</strong><span class="date">奥克兰 · 2021 年 8 月 – 至今</span></div>
-          <p class="rs-role">软件专家</p>
-          <ul>
-            <li>在迭代周期早期与 PM 和 UX 合作细化需求，在开发前消除功能风险，确保团队聚焦正确的迭代目标。</li>
-            <li>通过严格的代码审查、技术指导和优化测试工具链提升工程质量 —— 简化开发到 QA 的交付流程，降低发布摩擦。</li>
-            <li>主导跨团队移动端分会倡议：编码规范、最佳实践及团队间知识共享。</li>
-            <li>负责移动端发布协调与 CI/CD 流水线改进，包括从 Azure DevOps (TFS) 到 GitHub Enterprise 的持续迁移。</li>
-          </ul>
-        </div>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>Fiserv</strong><span class="date">奥克兰 · 2014 年 10 月 – 2021 年 8 月</span></div>
-          <p class="rs-role">资深移动端工程师</p>
-          <ul>
-            <li>负责面向全球金融机构的模块化移动银行 SDK 的产品与功能质量 —— 大量编码、深入代码审查，持续提升代码库的一致性标准。</li>
-            <li>主导从单体架构到 Clean Architecture 与依赖注入的转型，实现核心业务逻辑与动态 UI 主题的解耦。</li>
-            <li>端到端交付复杂子系统：生物识别认证、远程支票存款 (Camera2)、安全支付与转账、位置感知服务、跨时区调度及 deep-link 路由 —— 每个子系统均满足生产级安全要求。</li>
-          </ul>
-        </div>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>自由职业</strong><span class="date">广州 · 2012 年 3 月 – 2012 年 4 月</span></div>
-          <p class="rs-role">开发者</p>
-          <ul><li>构建集成视频播放、字幕同步、语音录制及基于艾宾浩斯遗忘曲线的词汇记忆引擎的 Android 多媒体学习平台。</li></ul>
-        </div>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>英业达</strong><span class="date">上海 · 2009 年 11 月 – 2011 年 12 月</span></div>
-          <p class="rs-role">Android 开发工程师</p>
-          <ul><li>为 Dr.eye mini 上网本架构一套系统级 Android 应用，包括词典引擎、多媒体教育模块及天气组件。针对 HTC、Asus、Foxconn 设备进行定制与硬件优化。</li></ul>
-        </div>
-      </div>
-
-      <div class="rs-block">
-        <h3>项目</h3>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>多智能体决策系统</strong><span class="date">2026 年 4 月 – 2026 年 7 月</span></div>
-          <ul>
-            <li>架构多智能体对抗性推理系统：两个 LLM 智能体在多个轮次中辩论，第三个进化器智能体通过沙箱验证的变异优化策略参数。决策仅在通过对抗性审查后才能生效。</li>
-            <li>构建自主监控流水线：轻量级信号检测持续评估状态，仅在高汇聚触发条件下激活 LLM 深度推理，并自动推送结果通知 —— 在决策质量与 AI 调用成本间取得平衡。</li>
-            <li>设计多供应商 AI 集成层 (AbstractAIClient)，支持 Gemini、DeepSeek 及 Claude —— 无需修改智能体逻辑即可热切换 LLM 后端。</li>
-            <li>构建 Guardian 安全层，通过硬约束与熔断机制实现：每个决策在执行前必须通过验证；连续失败触发自动停止并告警。</li>
-            <li>Python、FastAPI、YAML 驱动配置，涵盖单元、集成与系统层的完整测试套件。</li>
-          </ul>
-          <div class="rs-links"><a href="https://github.com/jiangyang5157/crypto">GitHub →</a></div>
-        </div>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>数独谜题引擎</strong><span class="date">2014 年 8 月 – 2014 年 10 月</span></div>
-          <ul><li>构建 Android 数独应用，基于 Go 实现的 Knuth's Algorithm X 求解器，毫秒级生成唯一解谜题。</li></ul>
-          <div class="rs-links">
-            <a href="https://github.com/jiangyang5157/sudoku-android">Android →</a>
-            <a href="https://github.com/jiangyang5157/go-sudoku">Go 求解器 →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="rs-block">
-        <h3>教育背景</h3>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>信息科学硕士（软件工程）</strong><span class="date">2016 年</span></div>
-          <p class="rs-role">梅西大学 — 奥克兰</p>
-          <ul><li>以 Grade A 完成 Android 沉浸式 VR 地理可视化平台项目 —— 自定义 GLES/GLSL GPU 着色器与射线相交空间交互。</li></ul>
-        </div>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>信息科学研究生文凭（软件工程）</strong><span class="date">2013 年 – 2014 年</span></div>
-          <p class="rs-role">梅西大学 — 奥克兰</p>
-        </div>
-        <div class="rs-item">
-          <div class="rs-item-head"><strong>电子信息工程学士</strong><span class="date">2005 年 – 2009 年</span></div>
-          <p class="rs-role">厦门大学 — 厦门</p>
-          <ul><li>毕业设计"基于单片机的交通灯控制系统"获优秀项目奖。使用 AT89S52、8225A 及 74HC245 汇编语言编写核心逻辑，自主设计并制作 PCB 电路板，实现硬件级实时控制。</li></ul>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- ═══════ CONTACT ═══════ -->
-  <section class="contact">
-    <p><a href="mailto:jiangyang5157@gmail.com">jiangyang5157@gmail.com</a></p>
-  </section>
-
-  <footer>
-    <p class="lang-en">Yang Jiang &nbsp;·&nbsp; Auckland, New Zealand</p>
-    <p class="lang-cn">江洋 &nbsp;·&nbsp; 新西兰，奥克兰</p>
-  </footer>
-
+  <!-- populated by JS -->
 </main>
 
 <script>
-  function setLang(lang) {
-    document.body.className = 'lang-' + lang;
-    document.querySelectorAll('.lang-pill button').forEach(btn => {
-      const txt = btn.textContent.trim();
-      btn.classList.toggle('active', (lang === 'en' && txt === 'EN') || (lang === 'cn' && txt === '中文'));
-    });
+// ── Inline markdown helpers ──
+function parseInline(text) {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+}
+
+function renderLinks(raw) {
+  if (!raw) return '';
+  const links = raw.match(/\[([^\]]+)\]\(([^)]+)\)/g) || [];
+  return links.map(l => {
+    const m = l.match(/\[([^\]]+)\]\(([^)]+)\)/);
+    return `<a href="${m[2]}">${m[1]}</a>`;
+  }).join(' ');
+}
+
+// ── Parser ──
+function parse(text) {
+  const lines = text.split('\n');
+  const data = {
+    hero: { name: '', subtitle: '', tagline: '', cta: '' },
+    keywords_label: '',
+    keywords: [],
+    contact: '',
+    footer: '',
+    resume: { summary: [], sections: [] }
+  };
+
+  let i = 0;
+
+  // Phase 1: metadata (until first ---)
+  while (i < lines.length) {
+    const line = lines[i].trim();
+    if (line === '---') { i++; break; }
+    if (line.startsWith('# ')) data.hero.name = line.slice(2);
+    else if (line.startsWith('## ')) data.hero.subtitle = line.slice(3);
+    else if (line.startsWith('@tagline ')) data.hero.tagline = parseInline(line.slice(9));
+    else if (line.startsWith('@cta ')) data.hero.cta = line.slice(5);
+    else if (line.startsWith('@keywords_label ')) data.keywords_label = line.slice(16);
+    else if (line.startsWith('@contact ')) data.contact = line.slice(9);
+    else if (line.startsWith('@footer ')) data.footer = line.slice(8);
+    i++;
   }
+
+  // Phase 2: keywords (until --- or ## Resume)
+  while (i < lines.length) {
+    const line = lines[i].trim();
+    if (line === '---') { i++; break; }
+    if (line === '## Resume' || line === '## 简历') { break; }
+    if (line.startsWith('### ')) {
+      const group = { name: parseInline(line.slice(4)), tags: [] };
+      i++;
+      while (i < lines.length && lines[i].trim().startsWith('- ')) {
+        group.tags.push(lines[i].trim().slice(2));
+        i++;
+      }
+      data.keywords.push(group);
+    } else {
+      i++;
+    }
+  }
+
+  // Phase 3: resume
+  if (i < lines.length && (lines[i].trim() === '## Resume' || lines[i].trim() === '## 简历')) {
+    i++;
+  }
+
+  // Parse summary paragraphs (text before first ###)
+  while (i < lines.length) {
+    const line = lines[i].trim();
+    if (line.startsWith('### ')) break;
+    if (line !== '' && !line.startsWith('---')) {
+      data.resume.summary.push(parseInline(line));
+    }
+    i++;
+  }
+
+  // Parse resume sections (### Section)
+  while (i < lines.length) {
+    const line = lines[i].trim();
+    if (line === '---' || line === '') { i++; continue; }
+    if (line.startsWith('### ')) {
+      const section = { title: parseInline(line.slice(4)), items: [] };
+      i++;
+      // Parse items within section (#### Item)
+      while (i < lines.length) {
+        const l2 = lines[i].trim();
+        if (l2.startsWith('### ') || l2 === '---') break;
+        if (l2.startsWith('#### ')) {
+          const item = { name: parseInline(l2.slice(5)), meta: '', role: '', bullets: [], links: [] };
+          i++;
+          while (i < lines.length) {
+            const l3 = lines[i].trim();
+            if (l3.startsWith('#### ') || l3.startsWith('### ') || l3 === '---') break;
+            if (l3.startsWith('@meta ')) item.meta = parseInline(l3.slice(6));
+            else if (l3.startsWith('@role ')) item.role = parseInline(l3.slice(6));
+            else if (l3.startsWith('- ')) item.bullets.push(parseInline(l3.slice(2)));
+            else if (l3.startsWith('@link ')) item.links.push(parseInline(l3.slice(6)));
+            i++;
+          }
+          section.items.push(item);
+        } else {
+          i++;
+        }
+      }
+      data.resume.sections.push(section);
+    } else {
+      i++;
+    }
+  }
+
+  return data;
+}
+
+// ── Renderer ──
+function render(data) {
+  let h = '';
+
+  // Hero
+  h += '<header class="hero">';
+  h += `<h1>${data.hero.name.replace(/\n/g,'<br>')}</h1>`;
+  h += `<p class="sub">${data.hero.subtitle}</p>`;
+  h += `<p class="tag">${data.hero.tagline}</p>`;
+  h += '<div class="act-row">';
+  h += `<a href="#resume" class="cta">${data.hero.cta}</a>`;
+  h += '<div class="lang-pill">';
+  h += `<button class="active" id="btn-en" onclick="switchLang('en')">EN</button>`;
+  h += `<button id="btn-cn" onclick="switchLang('cn')">中文</button>`;
+  h += '</div></div></header>';
+
+  // Keywords
+  h += '<section>';
+  h += `<h2 class="sec-label">${data.keywords_label}</h2>`;
+  h += '<div class="kw-grid">';
+  data.keywords.forEach(kw => {
+    h += `<div class="kw-group"><h3>${kw.name}</h3><div class="kw-tags">`;
+    kw.tags.forEach(t => { h += `<span>${t}</span>`; });
+    h += '</div></div>';
+  });
+  h += '</div></section>';
+
+  // Resume
+  h += '<section id="resume">';
+  h += '<h2 class="sec-label">Resume</h2>';
+
+  // Summary
+  if (data.resume.summary.length) {
+    h += '<div class="rs-summary">';
+    data.resume.summary.forEach(p => { h += `<p>${p}</p>`; });
+    h += '</div>';
+  }
+
+  // Sections
+  data.resume.sections.forEach(sec => {
+    h += `<div class="rs-block"><h3>${sec.title}</h3>`;
+    sec.items.forEach(item => {
+      h += '<div class="rs-item">';
+      h += `<div class="rs-item-head"><strong>${item.name}</strong>`;
+      if (item.meta) h += `<span class="date">${item.meta}</span>`;
+      h += '</div>';
+      if (item.role) h += `<p class="rs-role">${item.role}</p>`;
+      if (item.bullets.length) {
+        h += '<ul>';
+        item.bullets.forEach(b => { h += `<li>${b}</li>`; });
+        h += '</ul>';
+      }
+      if (item.links.length) {
+        h += `<div class="rs-links">${item.links.join(' ')}</div>`;
+      }
+      h += '</div>';
+    });
+    h += '</div>';
+  });
+
+  h += '</section>';
+
+  // Contact
+  h += `<section class="contact"><p><a href="mailto:${data.contact}">${data.contact}</a></p></section>`;
+  h += `<footer><p>${data.footer}</p></footer>`;
+
+  return h;
+}
+
+// ── App ──
+const cache = {};
+
+async function load(lang) {
+  const file = lang === 'en' ? 'resume_en.md' : 'resume_cn.md';
+  if (!cache[lang]) {
+    const res = await fetch(file);
+    const text = await res.text();
+    cache[lang] = parse(text);
+  }
+  document.querySelector('main').innerHTML = render(cache[lang]);
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-cn').classList.toggle('active', lang === 'cn');
+}
+
+document.addEventListener('DOMContentLoaded', () => load('en'));
+window.switchLang = lang => {
+  load(lang);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
 </script>
 </body>
 </html>

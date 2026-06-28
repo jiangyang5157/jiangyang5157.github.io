@@ -83,7 +83,7 @@
   }
   .hero .sub { font-size: 1.05rem; color: var(--text-2); margin-top: 0.6rem; font-weight: 400; }
   .hero .tag { font-size: 0.9rem; color: var(--text-3); margin-top: 1rem; max-width: 420px; line-height: 1.6; }
-  .hero .act-row { display: grid; grid-template-columns: 1fr 1fr; align-items: center; margin-top: 2rem; }
+  .hero .act-row { display: grid; grid-template-columns: 1fr 1fr; justify-items: start; align-items: center; margin-top: 2rem; }
   .hero .cta {
     display: inline-block;
     padding: 0.55rem 1.5rem; font-size: 0.88rem; font-weight: 500;
@@ -224,14 +224,10 @@ function parse(text) {
     }
   }
 
-  // Phase 3: resume
-  if (i < lines.length && (lines[i].trim() === '## Resume' || lines[i].trim() === '## 简历')) {
-    i++;
-  }
-
-  // Parse summary paragraphs (text before first ###)
+  // Phase 3: resume — skip ## Resume / ## 简历 heading then parse summary
   while (i < lines.length) {
     const line = lines[i].trim();
+    if (line === '## Resume' || line === '## 简历') { i++; continue; }
     if (line.startsWith('### ')) break;
     if (line !== '' && !line.startsWith('---')) {
       data.resume.summary.push(parseInline(line));

@@ -50,6 +50,15 @@
     background: var(--green);
     border-radius: 2px;
   }
+  /* top-of-rule marker */
+  main::after {
+    content: '';
+    position: absolute;
+    left: -0.1rem; top: 0;
+    width: 0.42rem; height: 0.42rem;
+    background: var(--green);
+    border-radius: 50%;
+  }
 
   .mono { font-family: 'Space Mono', 'SF Mono', 'Cascadia Code', ui-monospace, monospace; }
 
@@ -110,6 +119,11 @@
   .sk-tags span {
     font-size: 0.78rem; font-weight: 500; color: var(--text);
     background: var(--surface); padding: 0.25rem 0.7rem; border-radius: 5px;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .sk-tags span:hover {
+    transform: translateY(-1px);
+    background: #e8ede8;
   }
 
   /* ── Resume ── */
@@ -152,6 +166,7 @@
   @media (max-width: 560px) {
     main { padding-left: 0; padding-top: var(--rule-w); }
     main::before { top: 0; left: 0; right: 0; bottom: auto; width: 100%; height: var(--rule-w); }
+    main::after { top: -0.05rem; left: 0; }  /* marker on left of horizontal rule */
     .hero { padding-top: 2.5rem; }
     .skills-grid { grid-template-columns: 1fr; }
     section { padding: 2.5rem 0; }
@@ -173,8 +188,8 @@
     <h1><span class="lang-en">Yang<br>Jiang</span><span class="lang-cn">江洋</span></h1>
     <p class="sub"><span class="lang-en">Software Engineer</span><span class="lang-cn">软件工程师</span></p>
     <p class="tag">
-      <span class="lang-en"><strong>12+ years</strong> building financial platforms that ship — payments, SDKs, CI/CD. Also experienced with <strong>AI agents</strong>: multi-agent debate protocols, safety guardrails, autonomous decision pipelines.</span>
-      <span class="lang-cn"><strong>12 年以上</strong>金融平台工程经验 — 支付、SDK、CI/CD。<strong>AI 智能体</strong>方面亦有实践经验：多智能体辩论协议、安全防护与熔断机制、自主决策流水线。</span>
+      <span class="lang-en"><strong>12+ years</strong> of mobile engineering — Android, SDKs, CI/CD. Hands-on with <strong>AI agents</strong>.</span>
+      <span class="lang-cn"><strong>12 年以上</strong>移动端工程经验 — Android、SDK、CI/CD。<strong>AI 智能体</strong>方面亦有实践经验。</span>
     </p>
     <div class="act-row">
       <a href="#resume" class="cta"><span class="lang-en">View Resume ↓</span><span class="lang-cn">查看简历 ↓</span></a>
@@ -239,7 +254,7 @@
       <h2 class="sec-label">Resume</h2>
 
       <div class="rs-block">
-        <p>Software Engineer with <strong>12+ years</strong> building <strong>high-integrity financial platforms</strong>, and hands-on experience with <strong>AI agents</strong>. Bridges mobile-platform engineering with LLM agent architecture — multi-agent debate protocols, adversarial validation, and autonomous decision pipelines. Proven track record of modular frameworks that accelerate delivery in regulated environments.</p>
+        <p>Bridges mobile-platform engineering with LLM agent architecture — multi-agent debate protocols, adversarial validation, and autonomous decision pipelines. Proven track record of modular frameworks that accelerate delivery in regulated environments.</p>
       </div>
 
       <div class="rs-block">
@@ -323,7 +338,7 @@
       <h2 class="sec-label">简历</h2>
 
       <div class="rs-block">
-        <p>拥有 <strong>12 年以上</strong>构建<strong>高完整性金融平台</strong>经验的软件工程师，同时具备 <strong>AI 智能体</strong>方面的实践经验。兼具移动端/平台工程能力与 LLM 智能体架构实践经验 —— 多智能体辩论协议、对抗性验证及自主决策流水线。擅长构建模块化框架，在受监管环境中加速产品交付。</p>
+        <p>兼具移动端/平台工程能力与 LLM 智能体架构实践经验 —— 多智能体辩论协议、对抗性验证及自主决策流水线。擅长构建模块化框架，在受监管环境中加速产品交付。</p>
       </div>
 
       <div class="rs-block">

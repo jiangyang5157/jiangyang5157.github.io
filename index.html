@@ -53,23 +53,26 @@
 
   .mono { font-family: 'Space Mono', 'SF Mono', 'Cascadia Code', ui-monospace, monospace; }
 
-  /* ── Lang toggle ── */
-  .lang-switch {
-    position: fixed; top: 1rem; right: 1.5rem; z-index: 100;
+  /* ── Lang toggle (inline with CTA) ── */
+  .lang-pill {
     display: inline-flex; gap: 0;
     background: var(--surface); border-radius: 100px;
     padding: 3px; font-size: 0.76rem; font-weight: 500;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   }
-  .lang-switch button {
+  .lang-pill button {
     border: none; background: transparent;
     padding: 0.3rem 0.8rem; border-radius: 100px;
     cursor: pointer; font-family: inherit; font-size: inherit; font-weight: 500;
     color: var(--text-3); transition: all 0.2s ease;
   }
-  .lang-switch button.active { background: var(--green); color: #fff; }
-  .lang-switch button:hover:not(.active) { color: var(--text); }
+  .lang-pill button.active { background: var(--green); color: #fff; }
+  .lang-pill button:hover:not(.active) { color: var(--text); }
+
+  .hero .act-row {
+    display: flex; align-items: center; gap: 1rem;
+    margin-top: 2rem; flex-wrap: wrap;
+  }
 
   /* ── Section label ── */
   .sec-label {
@@ -163,12 +166,6 @@
 </head>
 <body class="lang-en">
 
-  <!-- ── Language Switch ── -->
-  <nav class="lang-switch" aria-label="Language">
-    <button class="active" onclick="setLang('en')">EN</button>
-    <button onclick="setLang('cn')">中文</button>
-  </nav>
-
 <main>
 
   <!-- ═══════ HERO ═══════ -->
@@ -179,7 +176,13 @@
       <span class="lang-en"><strong>12+ years</strong> building financial platforms that ship — payments, SDKs, CI/CD. Also experienced with <strong>AI agents</strong>: multi-agent debate protocols, safety guardrails, autonomous decision pipelines.</span>
       <span class="lang-cn"><strong>12 年以上</strong>金融平台工程经验 — 支付、SDK、CI/CD。<strong>AI 智能体</strong>方面亦有实践经验：多智能体辩论协议、安全防护与熔断机制、自主决策流水线。</span>
     </p>
-    <a href="#resume" class="cta"><span class="lang-en">View Resume ↓</span><span class="lang-cn">查看简历 ↓</span></a>
+    <div class="act-row">
+      <a href="#resume" class="cta"><span class="lang-en">View Resume ↓</span><span class="lang-cn">查看简历 ↓</span></a>
+      <div class="lang-pill">
+        <button class="active" onclick="setLang('en')">EN</button>
+        <button onclick="setLang('cn')">中文</button>
+      </div>
+    </div>
   </header>
 
   <!-- ═══════ SKILLS ═══════ -->
@@ -415,7 +418,7 @@
 <script>
   function setLang(lang) {
     document.body.className = 'lang-' + lang;
-    document.querySelectorAll('.lang-switch button').forEach(btn => {
+    document.querySelectorAll('.lang-pill button').forEach(btn => {
       const txt = btn.textContent.trim();
       btn.classList.toggle('active', (lang === 'en' && txt === 'EN') || (lang === 'cn' && txt === '中文'));
     });

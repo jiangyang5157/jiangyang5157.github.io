@@ -2,7 +2,7 @@
 name: {en: Yang Jiang, cn: 江洋}
 title: {en: Software Engineer, cn: 软件工程师}
 summary:
-  en: "**15+ years** of mobile engineering — **Android**, SDKs, CI/CD. Hands-on with **AI agents**."
+  en: "**15+ years** of mobile engineering – **Android**, SDKs, CI/CD. Hands-on with **AI agents**."
   cn: "**15 年以上**移动端工程经验 – **Android**、SDK、CI/CD。**AI 智能体**方面亦有实践经验。"
 email: jiangyang5157@gmail.com
 wechat: hpepsic
@@ -32,7 +32,7 @@ keywords:
 resume:
   label: {en: Resume, cn: 简历}
   bridge:
-    en: "Bridges mobile-platform engineering with LLM agent architecture — multi-agent debate protocols, adversarial validation, and autonomous decision pipelines. Proven track record of modular frameworks that accelerate delivery in regulated environments."
+    en: "Bridges mobile-platform engineering with LLM agent architecture – multi-agent debate protocols, adversarial validation, and autonomous decision pipelines. Proven track record of modular frameworks that accelerate delivery in regulated environments."
     cn: "兼具移动端/平台工程能力与 LLM 智能体架构实践经验 – 多智能体辩论协议、对抗性验证及自主决策流水线。擅长构建模块化框架，在受监管环境中加速产品交付。"
 
   sections:
@@ -46,14 +46,14 @@ resume:
           bullets:
             en:
               - "Partner with PMs and UX early-cycle to refine requirements, de-risk features, and keep the squad focused on the right outcomes each sprint."
-              - "Raise engineering quality through rigorous code review, mentoring, and investing in tester tooling — streamlining dev-to-QA handoff and reducing release friction."
+              - "Raise engineering quality through rigorous code review, mentoring, and investing in tester tooling – streamlining dev-to-QA handoff and reducing release friction."
               - "Lead cross-squad mobile chapter initiatives: coding standards, best practices, and knowledge sharing across teams."
-              - "Coordinate mobile releases and drive CI/CD pipeline improvements, including the migration from Azure DevOps (TFS) to GitHub Enterprise."
+              - "Coordinate mobile releases and drive CI/CD pipeline improvements, including the migration from Azure DevOps to GitHub Enterprise."
             cn:
               - "在迭代周期早期与 PM 和 UX 合作细化需求，在开发前消除功能风险，确保团队聚焦正确的迭代目标。"
               - "通过严格的代码审查、技术指导和优化测试工具链提升工程质量 – 简化开发到 QA 的交付流程，降低发布摩擦。"
               - "主导跨团队移动端分会倡议：编码规范、最佳实践及团队间知识共享。"
-              - "推进移动端发布协调与 CI/CD 流水线改进，包括从 Azure DevOps (TFS) 到 GitHub Enterprise 的持续迁移。"
+              - "推进移动端发布协调与 CI/CD 流水线改进，包括从 Azure DevOps 到 GitHub Enterprise 的持续迁移。"
 
         - name: {en: Fiserv, cn: Fiserv}
           location: {en: Auckland, cn: 奥克兰}
@@ -61,9 +61,9 @@ resume:
           role: {en: Senior Mobile Engineer, cn: 资深移动端工程师}
           bullets:
             en:
-              - "Owned product and feature quality across a modular mobile banking SDK deployed to financial institutions globally — hands-on coding, deep code review, and raising the consistency bar across the codebase."
+              - "Owned product and feature quality across a modular mobile banking SDK deployed to financial institutions globally – hands-on coding, deep code review, and raising the consistency bar across the codebase."
               - "Led the architectural transition from monolithic to Clean Architecture with dependency injection, decoupling core banking logic from dynamic UI theming."
-              - "Delivered complex subsystems end-to-end: biometric authentication, Remote Deposit Capture (Camera2), secure payments and transfers, location-aware services, cross-timezone scheduling, and deep-link routing — each with production-grade security requirements."
+              - "Delivered complex subsystems end-to-end: biometric authentication, Remote Deposit Capture (Camera2), secure payments and transfers, location-aware services, cross-timezone scheduling, and deep-link routing – each with production-grade security requirements."
             cn:
               - "负责面向全球金融机构的模块化移动银行 SDK 的产品与功能质量 – 大量编码、深入代码审查，持续提升代码库的一致性标准。"
               - "主导从单体架构到 Clean Architecture 与依赖注入的转型，实现核心业务逻辑与动态 UI 主题的解耦。"
@@ -97,8 +97,8 @@ resume:
           bullets:
             en:
               - "Architected a multi-agent adversarial reasoning system: two LLM agents debate across multiple rounds, with a third Evolver agent optimizing strategy parameters through sandbox-validated mutations. Decisions only pass after surviving adversarial critique."
-              - "Built an autonomous monitoring pipeline: lightweight signal detection continuously evaluates conditions, activates heavyweight LLM reasoning only on high-confluence triggers, and delivers automated notifications — balancing decision quality with AI cost."
-              - "Designed a provider-agnostic AI integration layer (AbstractAIClient) supporting Gemini, DeepSeek, and Claude — hot-swappable LLM backends without changing agent logic."
+              - "Built an autonomous monitoring pipeline: lightweight signal detection continuously evaluates conditions, activates heavyweight LLM reasoning only on high-confluence triggers, and delivers automated notifications – balancing decision quality with AI cost."
+              - "Designed a provider-agnostic AI integration layer (AbstractAIClient) supporting Gemini, DeepSeek, and Claude – hot-swappable LLM backends without changing agent logic."
               - "Engineered a Guardian safety layer with hard constraints and circuit breakers: every decision validated before execution; consecutive failures trigger automatic halt and alert."
               - "Leveraged Python, FastAPI, and YAML-driven configuration to build a comprehensive test suite across unit, integration, and system layers."
             cn:
@@ -131,10 +131,10 @@ resume:
             en: Master of Information Sciences (Software Engineering)
             cn: 信息科学硕士（软件工程）
           period: {en: "2016", cn: "2016 年"}
-          role: {en: Massey University — Auckland, cn: 梅西大学 – 奥克兰}
+          role: {en: Massey University – Auckland, cn: 梅西大学 – 奥克兰}
           bullets:
             en:
-              - "Achieved Grade A for designing an immersive VR geographic visualization platform on Android — custom GLES/GLSL GPU shaders with ray-casting spatial interaction."
+              - "Achieved Grade A for designing an immersive VR geographic visualization platform on Android – custom GLES/GLSL GPU shaders with ray-casting spatial interaction."
             cn:
               - "以 Grade A 完成 Android 沉浸式 VR 地理可视化平台项目 – 自定义 GLES/GLSL GPU 着色器与射线相交空间交互。"
 
@@ -142,13 +142,13 @@ resume:
             en: PGDip Information Science (Software Engineering)
             cn: 信息科学研究生文凭（软件工程）
           period: {en: 2013 – 2014, cn: 2013 年 – 2014 年}
-          role: {en: Massey University — Auckland, cn: 梅西大学 – 奥克兰}
+          role: {en: Massey University – Auckland, cn: 梅西大学 – 奥克兰}
 
         - name:
             en: BSc Electronics & Communications Engineering
             cn: 电子信息工程学士
           period: {en: 2005 – 2009, cn: 2005 年 – 2009 年}
-          role: {en: Xiamen University — Xiamen, cn: 厦门大学 – 厦门}
+          role: {en: Xiamen University – Xiamen, cn: 厦门大学 – 厦门}
           bullets:
             en:
               - "Undergraduate Excellence Award for an autonomous traffic control system. Programmed core logic in AT89S52, 8255A, and 74HC245 Assembly, designed and fabricated custom PCBs with peripheral logic ICs for real-time hardware-level control."

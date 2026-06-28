@@ -73,6 +73,9 @@
     margin-bottom: 1.5rem;
   }
 
+  /* Lang row */
+  .lang-row { margin-bottom: 1.5rem; display: flex; justify-content: flex-end; }
+
   /* Keywords bridge */
   .kw-bridge {
     font-size: 0.95rem; color: var(--text-2); line-height: 1.6;
@@ -81,7 +84,7 @@
   }
 
   /* Hero */
-  .hero { padding-top: clamp(4rem,12vh,7rem); padding-bottom: 2rem; }
+  .hero { padding-top: clamp(2rem,6vh,4rem); padding-bottom: 2rem; }
   .hero h1 {
     font-family: 'Space Mono', monospace;
     font-size: clamp(2.5rem,6vw,4.5rem); font-weight: 700;
@@ -90,7 +93,6 @@
   .hero .sub { font-size: 1.05rem; color: var(--text-2); margin-top: 0.6rem; font-weight: 400; }
   .hero .tag { font-size: 0.95rem; color: var(--text-3); margin-top: 1rem; max-width: 420px; line-height: 1.6; }
   .hero .tag strong { color: var(--green); font-weight: 600; }
-  .hero .act-row { position: absolute; top: 0.6rem; right: 0; }
 
   /* Sections */
   section { padding: 2.5rem 0; }
@@ -154,7 +156,6 @@
   /* Mobile */
   @media (max-width: 560px) {
     main { padding-left: calc(1.25rem + var(--rule-w)); }
-    .hero .act-row { top: 0.25rem; }
     .hero { padding-top: 2.5rem; }
     section { padding: 2rem 0; }
     .rs-item-head { flex-direction: column; }
@@ -234,10 +235,13 @@ const render = (d) => {
   <h1>${d.name.replace(/\n/g, '<br>')}</h1>
   <p class="sub">${d.title}</p>
   <p class="tag">${formatText(d.summary)}</p>
-  <div class="act-row"><div class="lang-pill">
+  </header>`;
+
+  // Lang toggle
+  h += `<div class="lang-row"><div class="lang-pill">
   <button class="active" id="btn-en" onclick="switchLang('en')">EN</button>
   <button id="btn-cn" onclick="switchLang('cn')">中文</button>
-  </div></div></header>`;
+  </div></div>`;
 
   // Keywords
   h += '<section>';

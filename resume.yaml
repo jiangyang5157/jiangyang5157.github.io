@@ -17,16 +17,16 @@ keywords:
     cn: "移动端平台工程是我深耕的领域，AI 是我前行的方向。"
   groups:
     - name: {en: Mobile & Cross-Platform, cn: 移动端与跨平台}
-      tags: [Android, Flutter, Clean Architecture, Modular SDK Design]
+      tags: [Android, Flutter, Clean Architecture, Modular SDK]
 
     - name: {en: AI, cn: AI}
       tags: [Multi-Agent Orchestration, Adversarial Debate Protocols, LLM Prompt Engineering, Autonomous Decision Pipelines, Evolutionary Strategy Optimization]
 
     - name: {en: Backend, cn: 后端}
-      tags: [Go, Python, C/C++, REST API Design]
+      tags: [REST API, Go, Python, C/C++]
 
     - name: {en: Engineering Practices, cn: 工程实践}
-      tags: [TDD, CI/CD, Agile / Scrum]
+      tags: [Agile Scrum, CI/CD, TDD]
 
 # ── Resume ──
 resume:

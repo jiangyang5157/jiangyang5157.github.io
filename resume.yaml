@@ -50,7 +50,7 @@ resume:
               - "Maintain cross-squad mobile community standards and culture, leveraging frequent technical synthesis and toolchain innovations to accelerate developer experience and elevate delivery quality."
               - "Orchestrate CI/CD pipeline enhancement, advance mobile release cycle, and contribute to the system-level migration from Azure DevOps to GitHub Enterprise."
             cn:
-              - "开发和维护 ASB 移动银行（Android / iOS），确保高并发弹性吞吐与金融级安全协议的严苛落地。"
+              - "研发和维护 ASB 移动银行（Android / iOS），确保高并发弹性吞吐与金融级安全协议的严苛落地。"
               - "主导迭代前置的需求分析与可行性审计，破除技术隐患，驱动团队聚焦高价值迭代目标。"
               - "维护跨团队移动端社区的标准和文化，通过高频技术探讨与工具链革新加速团队的研发体验，提升交付质量。"
               - "协调 CI/CD 流水线演进并推进移动端发布流，参与从 Azure DevOps 至 GitHub Enterprise 的系统级迁移。"
@@ -58,16 +58,16 @@ resume:
         - name: {en: Fiserv, cn: Fiserv}
           location: {en: Auckland, cn: 奥克兰}
           period: {en: Oct 2014 – Aug 2021, cn: 2014 年 10 月 – 2021 年 8 月}
-          role: {en: Senior Mobile Engineer, cn: 资深移动端工程师}
+          role: {en: Senior Mobile Engineer, cn: 高级移动端工程师}
           bullets:
             en:
-              - "Owned product and feature quality across a modular mobile banking SDK deployed to financial institutions globally – hands-on coding, deep code review, and raising the consistency bar across the codebase."
-              - "Led the architectural transition from monolithic to Clean Architecture with dependency injection, decoupling core banking logic from dynamic UI theming."
-              - "Delivered complex subsystems end-to-end: biometric authentication, Remote Deposit Capture (Camera2), secure payments and transfers, location-aware services, cross-timezone scheduling, and deep-link routing – each with production-grade security requirements."
+              - "Engineer a modular Mobile Banking SDK deployed to major US financial institutions globally."
+              - "Lead the architectural transition to Clean Architecture with dependency injection (Guice-to-Hilt), achieving a complete decoupling between business logic and bank-specific dynamic themes."
+              - "Deliver and scale modules: transfers, payments, Remote Deposit Capture, cross-timezone management, location services, and in-app deep-link routing."
             cn:
-              - "负责面向全球金融机构的模块化移动银行 SDK 的产品与功能质量 – 大量编码、深入代码审查，持续提升代码库的一致性标准。"
-              - "主导从单体架构到 Clean Architecture 与依赖注入的转型，实现核心业务逻辑与动态 UI 主题的解耦。"
-              - "端到端交付复杂子系统：生物识别认证、远程支票存款 (Camera2)、安全支付与转账、位置感知服务、跨时区调度及 deep-link 路由 – 每个子系统均满足生产级安全要求。"
+              - "研发和维护面向大量美国银行的模块化移动银行 SDK。"
+              - "主导架构向 Clean Architecture 与依赖注入（Guice-to-Hilt）的转型，实现项目级业务逻辑与不同银行动态主题的彻底解耦。"
+              - "交付/扩展的子模块：转账、支付、图像支票 、跨时区管理，地理位置服务，及应用内的 deep-link 路由。"
 
         - name: {en: Freelance, cn: 自由职业}
           location: {en: Guangzhou, cn: 广州}
@@ -75,9 +75,9 @@ resume:
           role: {en: Developer, cn: 开发者}
           bullets:
             en:
-              - "Built an Android multimedia learning platform with video playback, subtitle sync, voice recording, and a vocabulary retention engine based on the Ebbinghaus forgetting curve."
+              - "Engineer an Android multimedia learning platform integrating video playback, subtitle synchronization, and voice recording, powered by a custom vocabulary retention engine based on the Ebbinghaus forgetting curve."
             cn:
-              - "构建集成视频播放、字幕同步、语音录制及基于艾宾浩斯遗忘曲线的词汇记忆引擎的 Android 多媒体学习平台。"
+              - "自主设计并构建 Android 多媒体学习平台，集成视频播放、字幕同步及语音录制模块，基于艾宾浩斯遗忘曲线研发核心词汇记忆引擎。"
 
         - name: {en: Inventec Co. Ltd., cn: 英业达}
           location: {en: Shanghai, cn: 上海}
@@ -85,9 +85,9 @@ resume:
           role: {en: Android Developer, cn: Android 开发工程师}
           bullets:
             en:
-              - "Architected a suite of system-integrated Android applications for the Dr.eye mini netbook, including dictionary engine, multimedia education modules, and weather widgets. Optimized for HTC, Asus, and Foxconn hardware."
+              - "Architect a suite of system-integrated Android apps for our Dr.eye mini netbook, including dictionary engines, multimedia education modules, and weather widgets, customizing apps for HTC, Asus, and Foxconn devices."
             cn:
-              - "为 Dr.eye mini 上网本设计并架构了一套系统级 Android 应用，包括词典引擎、多媒体教育模块及天气组件。针对 HTC、Asus、Foxconn 设备进行定制与硬件优化。"
+              - "为我们的 Dr.eye mini 上网本架构系统级 Android 应用，涵盖词典引擎、多媒体教育模块，及天气组件。面向 HTC、Asus 及 Foxconn 设备的深度应用定制。"
 
     # ── Projects ──
     - title: {en: Projects, cn: 项目}
@@ -131,26 +131,26 @@ resume:
             en: Master of Information Sciences (Software Engineering)
             cn: 信息科学硕士（软件工程）
           period: {en: "2016", cn: "2016 年"}
-          role: {en: Massey University – Auckland, cn: 梅西大学 – 奥克兰}
+          role: {en: Massey University – New Zealand, cn: 梅西大学 – 新西兰}
           bullets:
             en:
-              - "Achieved Grade A for designing an immersive VR geographic visualization platform on Android – custom GLES/GLSL GPU shaders with ray-casting spatial interaction."
+              - "Achieved Grade A for designing an immersive VR geographic visualization platform on Android, architecting GLES/GLSL GPU shaders with ray-casting spatial interaction."
             cn:
-              - "以 Grade A 完成 Android 沉浸式 VR 地理可视化平台项目 – 自定义 GLES/GLSL GPU 着色器与射线相交空间交互。"
+              - "以 Grade A 完成 Android 沉浸式 VR 地理可视化平台，架构GLES/GLSL GPU 着色器与射线的相交空间交互。"
 
         - name:
             en: PGDip Information Science (Software Engineering)
             cn: 信息科学研究生文凭（软件工程）
           period: {en: 2013 – 2014, cn: 2013 年 – 2014 年}
-          role: {en: Massey University – Auckland, cn: 梅西大学 – 奥克兰}
+          role: {en: Massey University – New Zealand, cn: 梅西大学 – 新西兰}
 
         - name:
-            en: BSc Electronics & Communications Engineering
-            cn: 电子信息工程学士
+            en: Bachelor of Science in Electronics & Communications Engineering
+            cn: 电子与通信工程理学学士学位
           period: {en: 2005 – 2009, cn: 2005 年 – 2009 年}
-          role: {en: Xiamen University – Xiamen, cn: 厦门大学 – 厦门}
+          role: {en: Xiamen University – China, cn: 厦门大学 – 中国}
           bullets:
             en:
-              - "Undergraduate Excellence Award for an autonomous traffic control system. Programmed core logic in AT89S52, 8255A, and 74HC245 Assembly, designed and fabricated custom PCBs with peripheral logic ICs for real-time hardware-level control."
+              - "Receive the Undergraduate Excellence Award for an autonomous traffic control system, programming in AT89S52, 8255A, and 74HC245 Assembly while fabricating custom PCBs from scratch for real-time hardware-level control."
             cn:
-              - "毕业设计《基于单片机的交通灯控制系统》获优秀项目奖。使用 AT89S52、8225A 及 74HC245 汇编语言编写核心逻辑，自主设计并制作 PCB 电路板，实现硬件级实时控制。"
+              - "毕业设计《基于单片机的交通灯控制系统》获优秀项目奖。使用 AT89S52、8255A，及 74HC245 和汇编语言，从零设计并制作 PCB 电路板，实现硬件级实时控制。"

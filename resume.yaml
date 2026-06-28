@@ -16,17 +16,11 @@ keywords:
     en: "Mobile platform engineering is where I'm deepest; AI is where I'm headed."
     cn: "移动端平台工程是我深耕的领域，AI 是我前行的方向。"
   groups:
-    - name: {en: Mobile & Cross-Platform, cn: 移动端与跨平台}
-      tags: [Android, Flutter, Clean Architecture, Modular SDK]
+    - name: {en: Mobile & Platform, cn: 移动端与平台}
+      tags: [Android, Flutter, Clean Architecture, Modular SDK, Go, Python, REST API, CI/CD, Azure DevOps, Agile Scrum]
 
     - name: {en: AI, cn: AI}
       tags: [Multi-Agent Orchestration, Adversarial Debate Protocols, LLM Prompt Engineering, Autonomous Decision Pipelines, Evolutionary Strategy Optimization]
-
-    - name: {en: Backend, cn: 后端}
-      tags: [REST API, Go, Python, C/C++]
-
-    - name: {en: Engineering Practices, cn: 工程实践}
-      tags: [Agile Scrum, CI/CD, Azure DevOps]
 
 # ── Resume ──
 resume:

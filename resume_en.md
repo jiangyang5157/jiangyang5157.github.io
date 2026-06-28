@@ -80,7 +80,7 @@ Bridges mobile-platform engineering with LLM agent architecture — multi-agent 
 #### Sudoku Puzzle Engine
 @meta Aug 2014 – Oct 2014
 - Built an Android Sudoku app generating unique puzzles in milliseconds, powered by a Go-based Knuth's Algorithm X solver.
-@link [Android →](https://github.com/jiangyang5157/sudoku-android) [Go Solver →](https://github.com/jiangyang5157/go-sudoku)
+@link [Android →](https://github.com/jiangyang5157/sudoku-android) [Go Engine →](https://github.com/jiangyang5157/go-sudoku)
 
 ### Education
 

@@ -80,7 +80,7 @@
 #### 数独谜题引擎
 @meta 2014 年 8 月 – 2014 年 10 月
 - 构建 Android 数独应用，基于 Go 实现的 Knuth's Algorithm X 求解器，毫秒级生成唯一解谜题。
-@link [Android →](https://github.com/jiangyang5157/sudoku-android) [Go 求解器 →](https://github.com/jiangyang5157/go-sudoku)
+@link [Android →](https://github.com/jiangyang5157/sudoku-android) [Go 引擎 →](https://github.com/jiangyang5157/go-sudoku)
 
 ### 教育背景
 

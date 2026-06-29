@@ -316,8 +316,13 @@ const load = async (lang) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  const saved = localStorage.getItem('lang') || 'cn';
-  load(saved).then(() => {
+  const params = new URLSearchParams(window.location.search);
+  const hl = params.get('hl');
+  let lang;
+  if (hl === 'zh')        lang = 'cn';
+  else if (hl === 'en')   lang = 'en';
+  else                    lang = localStorage.getItem('lang') || 'en';
+  load(lang).then(() => {
     setTimeout(() => { document.querySelector('main').classList.add('loaded'); }, 600);
   });
 });

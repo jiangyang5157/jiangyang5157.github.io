@@ -1,148 +1,148 @@
 # ── Hero ──
-name: {en: Yang Jiang, cn: 江洋}
-title: {en: Software Engineer, cn: 软件工程师}
+name: {en: Yang Jiang, zh: 江洋}
+title: {en: Software Engineer, zh: 软件工程师}
 summary:
   en: "Over **15 years** of mobile engineering, **Android**, CI/CD. Hands-on **AI agents**."
-  cn: "**15 年**以上移动端工程经验，**Android**、CI/CD。**AI 智能体**方面亦有实践经验。"
+  zh: "**15 年**以上移动端工程经验，**Android**、CI/CD。**AI 智能体**方面亦有实践经验。"
 email: jiangyang5157@gmail.com
 wechat: hpepsic
-current_location: {en: "Auckland, New Zealand", cn: "新西兰，奥克兰"}
-last_modified: {en: Last modified June 2026, cn: 更新于 2026 年 6 月}
+current_location: {en: "Auckland, New Zealand", zh: "新西兰，奥克兰"}
+last_modified: {en: Last modified June 2026, zh: 更新于 2026 年 6 月}
 
 # ── Keywords ──
 keywords:
-  label: {en: Keywords, cn: 关键词}
+  label: {en: Keywords, zh: 关键词}
   bridge:
     en: "Mobile platform engineering is where I'm deepest; AI is where I'm headed."
-    cn: "移动端平台工程是我深耕的领域，AI 是我前行的方向。"
+    zh: "移动端平台工程是我深耕的领域，AI 是我前行的方向。"
   groups:
-    - name: {en: Mobile & Platform, cn: 移动端与平台}
+    - name: {en: Mobile & Platform, zh: 移动端与平台}
       tags: [Android, Flutter, Clean Architecture, Modular SDK, Go, Python, REST API, CI/CD, Azure DevOps, Agile Scrum]
 
-    - name: {en: AI, cn: AI}
+    - name: {en: AI, zh: AI}
       tags: [Agent Harness, Multi-Agent Orchestration, Adversarial Debate Protocols, Context Management, Sandbox-Validated Agent Evolution]
 
 # ── Resume ──
 resume:
-  label: {en: Resume, cn: 简历}
+  label: {en: Resume, zh: 简历}
   bridge:
     en: "Bridges mobile-platform engineering with LLM agent architecture – multi-agent debate protocols, adversarial validation, and autonomous decision pipelines. Proven track record of modular frameworks that accelerate delivery in regulated environments."
-    cn: "兼具移动端/平台工程能力与 LLM 智能体架构实践经验 – 多智能体辩论协议、对抗性验证及自主决策流水线。擅长构建模块化框架，在受监管环境中加速产品交付。"
+    zh: "兼具移动端/平台工程能力与 LLM 智能体架构实践经验 – 多智能体辩论协议、对抗性验证及自主决策流水线。擅长构建模块化框架，在受监管环境中加速产品交付。"
 
   sections:
     # ── Employment ──
-    - title: {en: Employment, cn: 工作经历}
+    - title: {en: Employment, zh: 工作经历}
       items:
-        - name: {en: ASB Bank, cn: ASB 银行}
-          location: {en: Auckland, cn: 奥克兰}
-          period: {en: Aug 2021 – Present, cn: 2021 年 8 月 – 至今}
-          role: {en: Software Specialist, cn: 软件专家}
+        - name: {en: ASB Bank, zh: ASB 银行}
+          location: {en: Auckland, zh: 奥克兰}
+          period: {en: Aug 2021 – Present, zh: 2021 年 8 月 – 至今}
+          role: {en: Software Specialist, zh: 软件专家}
           bullets:
             en:
               - "Engineer ASB Mobile Banking across Android and iOS, ensuring high-concurrency resilience and compliance with stringent financial security protocols."
               - "Drive early-cycle requirements analysis and feasibility audits to eliminate technical risks and steer the squad toward predictable, high-value sprint outcomes."
               - "Maintain cross-squad mobile community standards and culture, leveraging frequent technical synthesis and toolchain innovations to accelerate developer experience and elevate delivery quality."
               - "Orchestrate CI/CD pipeline enhancement, advance mobile release cycle, and contribute to the system-level migration from Azure DevOps to GitHub Enterprise."
-            cn:
+            zh:
               - "研发和维护 ASB 移动银行（Android / iOS），确保高并发弹性吞吐与金融级安全协议的严苛落地。"
               - "主导迭代前置的需求分析与可行性审计，破除技术隐患，驱动团队聚焦高价值迭代目标。"
               - "维护跨团队移动端社区的标准和文化，通过高频技术探讨与工具链革新加速团队的研发体验，提升交付质量。"
               - "协调 CI/CD 流水线演进并推进移动端发布流，参与从 Azure DevOps 至 GitHub Enterprise 的系统级迁移。"
 
-        - name: {en: Fiserv, cn: Fiserv}
-          location: {en: Auckland, cn: 奥克兰}
-          period: {en: Oct 2014 – Aug 2021, cn: 2014 年 10 月 – 2021 年 8 月}
-          role: {en: Senior Mobile Engineer, cn: 高级移动端工程师}
+        - name: {en: Fiserv, zh: Fiserv}
+          location: {en: Auckland, zh: 奥克兰}
+          period: {en: Oct 2014 – Aug 2021, zh: 2014 年 10 月 – 2021 年 8 月}
+          role: {en: Senior Mobile Engineer, zh: 高级移动端工程师}
           bullets:
             en:
               - "Engineer a modular Mobile Banking SDK deployed to major US financial institutions globally."
               - "Lead the architectural transition to Clean Architecture with dependency injection (Guice-to-Hilt), achieving a complete decoupling between business logic and bank-specific dynamic themes."
               - "Deliver and scale modules: transfers, payments, Remote Deposit Capture, cross-timezone management, location services, and in-app deep-link routing."
-            cn:
+            zh:
               - "研发和维护面向大量美国银行的模块化移动银行 SDK。"
               - "主导架构向 Clean Architecture 与依赖注入（Guice-to-Hilt）的转型，实现项目级业务逻辑与不同银行动态主题的彻底解耦。"
               - "交付/扩展的子模块：转账、支付、图像支票 、跨时区管理，地理位置服务，及应用内的 deep-link 路由。"
 
-        - name: {en: Freelance, cn: 自由职业}
-          location: {en: Guangzhou, cn: 广州}
-          period: {en: Mar 2012 – Apr 2012, cn: 2012 年 3 月 – 2012 年 4 月}
-          role: {en: Developer, cn: 开发者}
+        - name: {en: Freelance, zh: 自由职业}
+          location: {en: Guangzhou, zh: 广州}
+          period: {en: Mar 2012 – Apr 2012, zh: 2012 年 3 月 – 2012 年 4 月}
+          role: {en: Developer, zh: 开发者}
           bullets:
             en:
               - "Engineer an Android multimedia learning platform integrating video playback, subtitle synchronization, and voice recording, powered by a custom vocabulary retention engine based on the Ebbinghaus forgetting curve."
-            cn:
+            zh:
               - "自主设计并构建 Android 多媒体学习平台，集成视频播放、字幕同步及语音录制模块，基于艾宾浩斯遗忘曲线研发核心词汇记忆引擎。"
 
-        - name: {en: Inventec Co. Ltd., cn: 英业达}
-          location: {en: Shanghai, cn: 上海}
-          period: {en: Nov 2009 – Dec 2011, cn: 2009 年 11 月 – 2011 年 12 月}
-          role: {en: Android Developer, cn: Android 开发工程师}
+        - name: {en: Inventec Co. Ltd., zh: 英业达}
+          location: {en: Shanghai, zh: 上海}
+          period: {en: Nov 2009 – Dec 2011, zh: 2009 年 11 月 – 2011 年 12 月}
+          role: {en: Android Developer, zh: Android 开发工程师}
           bullets:
             en:
               - "Architect a suite of system-integrated Android apps for our Dr.eye mini netbook, including dictionary engines, multimedia education modules, and weather widgets, customizing apps for HTC, Asus, and Foxconn devices."
-            cn:
+            zh:
               - "为我们的 Dr.eye mini 上网本架构系统级 Android 应用，涵盖词典引擎、多媒体教育模块，及天气组件。面向 HTC、Asus 及 Foxconn 设备的深度应用定制。"
 
     # ── Projects ──
-    - title: {en: Projects, cn: 项目}
+    - title: {en: Projects, zh: 项目}
       items:
-        - name: {en: Multi-Agent Decision System, cn: 多智能体决策系统}
-          period: {en: Apr 2026 – Jul 2026, cn: 2026 年 4 月 – 2026 年 7 月}
+        - name: {en: Multi-Agent Decision System, zh: 多智能体决策系统}
+          period: {en: Apr 2026 – Jul 2026, zh: 2026 年 4 月 – 2026 年 7 月}
           bullets:
             en:
               - "Architect an agent harness for multi-agent adversarial reasoning: two LLM agents debate across multiple rounds, ensuring decisions only pass after surviving adversarial critique."
               - "Govern the system via YAML configurations to dynamically manage the LLM reasoning book and decision quality, enabling the third Evolver agent to execute sandbox-validated mutations for continuous self-evolution."
               - "Build an autonomous monitoring pipeline where lightweight signal detection continuously evaluates conditions, activating heavyweight LLM adversarial reasoning only on high-confluence triggers to balance decision quality with AI compute costs."
               - "Design a provider-agnostic LLM integration layer, enabling hot-swappable Gemini, DeepSeek, and Qwen APIs."
-            cn:
+            zh:
               - "架构多智能体对抗性推理的 Agent Harness：两个 LLM 智能体在多个轮次中辩论，确保决策仅在通过对抗性审查后生效。"
               - "通过 YAML 配置控制整套系统，动态管控 LLM 推理标准与决策质量，由此赋能第三个进化器智能体执行沙箱验证的变异以跑通持续自进化。"
               - "构建自主监控流水线：轻量级信号检测持续评估状态，仅在高汇聚触发条件下激活 LLM 深度对抗推理，在决策质量与 AI 调用成本间取得平衡。"
               - "设计多供应商 LLM 集成层，支持热切换 Gemini、DeepSeek 及 Qwen API。"
           links:
-            - text: {en: GitHub, cn: GitHub}
+            - text: {en: GitHub, zh: GitHub}
               url: https://github.com/jiangyang5157/crypto
 
-        - name: {en: Sudoku Puzzle Engine, cn: 数独谜题引擎}
-          period: {en: Aug 2014 – Oct 2014, cn: 2014 年 8 月 – 2014 年 10 月}
+        - name: {en: Sudoku Puzzle Engine, zh: 数独谜题引擎}
+          period: {en: Aug 2014 – Oct 2014, zh: 2014 年 8 月 – 2014 年 10 月}
           bullets:
             en:
               - "Built an Android Sudoku app generating unique puzzles in milliseconds, powered by a Go-based Knuth's Algorithm X solver."
-            cn:
+            zh:
               - "构建 Android 数独应用，基于 Go 实现的 Knuth's Algorithm X 求解器，毫秒级生成唯一解谜题。"
           links:
-            - text: {en: Android, cn: Android}
+            - text: {en: Android, zh: Android}
               url: https://github.com/jiangyang5157/sudoku-android
-            - text: {en: Go Engine, cn: Go 引擎}
+            - text: {en: Go Engine, zh: Go 引擎}
               url: https://github.com/jiangyang5157/go-sudoku
 
     # ── Education ──
-    - title: {en: Education, cn: 教育背景}
+    - title: {en: Education, zh: 教育背景}
       items:
         - name:
             en: Master of Information Sciences (Software Engineering)
-            cn: 信息科学硕士（软件工程）
-          period: {en: "2016", cn: "2016 年"}
-          role: {en: Massey University – New Zealand, cn: 梅西大学 – 新西兰}
+            zh: 信息科学硕士（软件工程）
+          period: {en: "2016", zh: "2016 年"}
+          role: {en: Massey University – New Zealand, zh: 梅西大学 – 新西兰}
           bullets:
             en:
               - "Achieved Grade A for designing an immersive VR geographic visualization platform on Android, architecting GLES/GLSL GPU shaders with ray-casting spatial interaction."
-            cn:
+            zh:
               - "以 Grade A 完成 Android 沉浸式 VR 地理可视化平台，架构GLES/GLSL GPU 着色器与射线的相交空间交互。"
 
         - name:
             en: PGDip Information Science (Software Engineering)
-            cn: 信息科学研究生文凭（软件工程）
-          period: {en: 2013 – 2014, cn: 2013 年 – 2014 年}
-          role: {en: Massey University – New Zealand, cn: 梅西大学 – 新西兰}
+            zh: 信息科学研究生文凭（软件工程）
+          period: {en: 2013 – 2014, zh: 2013 年 – 2014 年}
+          role: {en: Massey University – New Zealand, zh: 梅西大学 – 新西兰}
 
         - name:
             en: Bachelor of Science in Electronics & Communications Engineering
-            cn: 电子与通信工程理学学士学位
-          period: {en: 2005 – 2009, cn: 2005 年 – 2009 年}
-          role: {en: Xiamen University – China, cn: 厦门大学 – 中国}
+            zh: 电子与通信工程理学学士学位
+          period: {en: 2005 – 2009, zh: 2005 年 – 2009 年}
+          role: {en: Xiamen University – China, zh: 厦门大学 – 中国}
           bullets:
             en:
               - "Receive the Undergraduate Excellence Award for an autonomous traffic control system, programming in AT89S52, 8255A, and 74HC245 Assembly while fabricating custom PCBs from scratch for real-time hardware-level control."
-            cn:
+            zh:
               - "毕业设计《基于单片机的交通灯控制系统》获优秀项目奖。使用 AT89S52、8255A，及 74HC245 和汇编语言，从零设计并制作 PCB 电路板，实现硬件级实时控制。"

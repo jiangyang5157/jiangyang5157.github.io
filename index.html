@@ -215,7 +215,7 @@ const resolveLang = (node, lang) => {
   if (node === null || node === undefined) return node;
   if (Array.isArray(node)) return node.map(v => resolveLang(v, lang));
   if (typeof node === 'object') {
-    if ('en' in node && 'cn' in node) return resolveLang(node[lang], lang);
+    if ('en' in node && 'zh' in node) return resolveLang(node[lang], lang);
     const out = {};
     Object.keys(node).forEach(k => { out[k] = resolveLang(node[k], lang); });
     return out;
@@ -230,7 +230,7 @@ const render = (d) => {
   // Hero
   h += `<header class="hero">
   <h1><span>${d.name.replace(/\n/g, '<br>')}</span> <span class="lang-pill">
-  <button class="active" id="btn-cn" onclick="switchLang('cn')">中文</button>
+  <button class="active" id="btn-zh" onclick="switchLang('zh')">中文</button>
   <button id="btn-en" onclick="switchLang('en')">EN</button>
   </span></h1>
   <p class="tag">${d.title} | ${formatText(d.summary)}</p>
@@ -307,8 +307,8 @@ const load = async (lang) => {
     const data = resolveLang(cache.yaml, lang);
     document.querySelector('main').innerHTML = render(data);
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-    document.getElementById('btn-cn').classList.toggle('active', lang === 'cn');
-    localStorage.setItem('lang', lang);
+    document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+    localStorage.setItem('host-lang', lang);
   } catch (err) {
     document.querySelector('main').innerHTML = '<p style="padding:2rem;color:var(--text-2);">Failed to load resume. Check your connection and try again.</p>';
     console.error(err);
@@ -319,9 +319,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
   const hl = params.get('hl');
   let lang;
-  if (hl === 'zh')        lang = 'cn';
+  if (hl === 'zh')        lang = 'zh';
   else if (hl === 'en')   lang = 'en';
-  else                    lang = localStorage.getItem('lang') || 'en';
+  else                    lang = localStorage.getItem('host-lang') || 'en';
   load(lang).then(() => {
     setTimeout(() => { document.querySelector('main').classList.add('loaded'); }, 600);
   });

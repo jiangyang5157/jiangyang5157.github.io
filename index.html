@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let lang;
   if (hl === 'zh')        lang = 'zh';
   else if (hl === 'en')   lang = 'en';
-  else                    lang = localStorage.getItem('host-lang') || 'en';
+  else                    lang = localStorage.getItem('host-lang') || 'zh';
   load(lang).then(() => {
     setTimeout(() => { document.querySelector('main').classList.add('loaded'); }, 600);
   });

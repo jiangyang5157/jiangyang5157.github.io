@@ -20,7 +20,7 @@ keywords:
       tags: [Android, Flutter, Clean Architecture, Modular SDK, Go, Python, REST API, CI/CD, Azure DevOps, Agile Scrum]
 
     - name: {en: AI, cn: AI}
-      tags: [Multi-Agent Orchestration, Adversarial Debate Protocols, LLM Prompt Engineering, Autonomous Decision Pipelines, Evolutionary Strategy Optimization]
+      tags: [Agent Harness, Multi-Agent Orchestration, Adversarial Debate Protocols, Context Management, Sandbox-Validated Agent Evolution]
 
 # ── Resume ──
 resume:
@@ -90,12 +90,12 @@ resume:
           period: {en: Apr 2026 – Jul 2026, cn: 2026 年 4 月 – 2026 年 7 月}
           bullets:
             en:
-              - "Architect a multi-agent adversarial reasoning system: two LLM agents debate across multiple rounds, ensuring decisions only pass after surviving adversarial critique."
+              - "Architect an agent harness for multi-agent adversarial reasoning: two LLM agents debate across multiple rounds, ensuring decisions only pass after surviving adversarial critique."
               - "Govern the system via YAML configurations to dynamically manage the LLM reasoning book and decision quality, enabling the third Evolver agent to execute sandbox-validated mutations for continuous self-evolution."
               - "Build an autonomous monitoring pipeline where lightweight signal detection continuously evaluates conditions, activating heavyweight LLM adversarial reasoning only on high-confluence triggers to balance decision quality with AI compute costs."
               - "Design a provider-agnostic LLM integration layer, enabling hot-swappable Gemini, DeepSeek, and Qwen APIs."
             cn:
-              - "架构多智能体对抗性推理系统：两个 LLM 智能体在多个轮次中辩论，确保决策仅在通过对抗性审查后生效。"
+              - "架构多智能体对抗性推理的 Agent Harness：两个 LLM 智能体在多个轮次中辩论，确保决策仅在通过对抗性审查后生效。"
               - "通过 YAML 配置控制整套系统，动态管控 LLM 推理标准与决策质量，由此赋能第三个进化器智能体执行沙箱验证的变异以跑通持续自进化。"
               - "构建自主监控流水线：轻量级信号检测持续评估状态，仅在高汇聚触发条件下激活 LLM 深度对抗推理，在决策质量与 AI 调用成本间取得平衡。"
               - "设计多供应商 LLM 集成层，支持热切换 Gemini、DeepSeek 及 Qwen API。"
